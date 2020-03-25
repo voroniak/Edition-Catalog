@@ -97,8 +97,9 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
@@ -128,7 +129,7 @@
             this.bookToolStripMenuItem,
             this.magazineToolStripMenuItem});
             this.addNewToolStripMenuItem.Name = "addNewToolStripMenuItem";
-            this.addNewToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
+            this.addNewToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.addNewToolStripMenuItem.Text = "Add new";
             // 
             // bookToolStripMenuItem
@@ -141,8 +142,9 @@
             // magazineToolStripMenuItem
             // 
             this.magazineToolStripMenuItem.Name = "magazineToolStripMenuItem";
-            this.magazineToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
+            this.magazineToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.magazineToolStripMenuItem.Text = "Magazine";
+            this.magazineToolStripMenuItem.Click += new System.EventHandler(this.magazineToolStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 
@@ -194,7 +196,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(680, 274);
+            this.dataGridView1.Size = new System.Drawing.Size(943, 274);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 

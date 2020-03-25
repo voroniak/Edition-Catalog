@@ -1,5 +1,6 @@
 ﻿using EditionCatalog.BL.Model;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,10 @@ using System.Threading.Tasks;
 
 namespace EditionCatalog.BL.Controller
 {
-    public class EditionController
+    public class EditionController: IEnumerable
     {
         private List<Edition> _editions;
+        public int Count => _editions.Count;
         public EditionController()
         {
             _editions = new List<Edition>();
@@ -38,6 +40,16 @@ namespace EditionCatalog.BL.Controller
         {
             _editions.Add(new Magazine(authorName, name, countOfPages, yearOfPublishing, price, periodicalPerMonth, number));
         }
+
+        public Edition Last()
+        {
+            if (_editions.Count <= 0)
+            {
+                throw new IndexOutOfRangeException();
+            }
+            return _editions[_editions.Count - 1];
+        }
+
         //public List<string> LoadEditions(string editionsInfo)
         //{
         //    Regex regex = new Regex(@"(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(\w+)\n");
@@ -69,7 +81,7 @@ namespace EditionCatalog.BL.Controller
 
         //    return info;
         //}
-        public List<string> Load(string editionsInfo)
+        public void Load(string editionsInfo)
         {
             editionsInfo = editionsInfo.Replace("\r", "");
             List<string> info = new List<string>();
@@ -105,7 +117,16 @@ namespace EditionCatalog.BL.Controller
             {
                 vs.Add(edition.ToString());
             }
-            return vs;
+           
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return ((IEnumerable)_editions).GetEnumerator();
+        }
+        public void Clear()
+        {
+            _editions = new List<Edition>();
         }
     }
 }

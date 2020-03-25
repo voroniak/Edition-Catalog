@@ -46,7 +46,7 @@ namespace EditionCatalog.BL.Model
         }
         public override string ToString()
         {
-            return $"{Author}\t{Name}\t{CountOfPages}\t{YearOfPublishing}\t";
+            return $"{Author}\t{Name}\t{CountOfPages}\t{YearOfPublishing}\t{Price}\t";
         }
 
         public int CompareTo(object obj)

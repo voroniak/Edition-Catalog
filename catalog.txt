@@ -1,5 +1,5 @@
-1	Terry Pratchett	Mor	400	1980	180,00	Fantasy
+1	Terry Pratchett	Mor	400	1980	180,50	Fantasy
 0	Nature Publishing Group	Nature	44	1989	187,00	12	3	4
-1	Terry Pratchett	Mor1	450	1985	185,00	Fantasy
+1	Terry Pratchett	Mor1	450	1985	185,70	Fantasy
 
 

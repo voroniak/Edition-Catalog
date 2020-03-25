@@ -36,9 +36,9 @@ namespace EditionCatalog.BL.Model
             Number = number;
 
         }
-        //public override string ToString()
-        //{
-        //    return base.ToString()+ $"{PeriodicalPerMonth}; Number: {Number};"; 
-        //}
+        public override string ToString()
+        {
+            return base.ToString() + $"{PeriodicalPerMonth}\t{Number}\t";
+        }
     }
 }

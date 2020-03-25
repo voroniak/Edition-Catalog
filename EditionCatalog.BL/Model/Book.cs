@@ -29,9 +29,9 @@ namespace EditionCatalog.BL.Model
             Genre = genre;
 
         }
-        //public override string ToString()
-        //{
-        //    return base.ToString() +$"{Price}\t{Genre}\t";
-        //}
+        public override string ToString()
+        {
+            return base.ToString() + $"{Price}\t{Genre}\t";
+        }
     }
 }
