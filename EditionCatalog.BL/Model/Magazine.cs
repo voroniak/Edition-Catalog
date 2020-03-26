@@ -8,8 +8,8 @@ namespace EditionCatalog.BL.Model
 {
    public class Magazine : Edition
     {
-        public int PeriodicalPerMonth { get; protected set; }
-        public int Number { get; protected set; }
+        public int PeriodicalPerMonth { get; set; }
+        public int Number { get;  set; }
         public Magazine(string authorName,
                         string name,
                         int countOfPages,

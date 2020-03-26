@@ -8,12 +8,12 @@ namespace EditionCatalog.BL.Model
 {
    public class Author
     {
-        public string Name { get; }
+        public string Name { get; set; }
         public Author (string name)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
-                throw new ArgumentNullException("Name can not be null or empty.", nameof(name));
+                throw new ArgumentNullException(nameof(name), "Name can not be null or empty.");
             }
             Name = name;
         }

@@ -8,7 +8,7 @@ namespace EditionCatalog.BL.Model
 {
     public class Book : Edition
     {
-        public string Genre { get; }
+        public string Genre { get; set; }
         public Book(string authorName,
                     string name,
                     int countOfPages,
@@ -23,7 +23,7 @@ namespace EditionCatalog.BL.Model
             #region checking the conditions
             if (string.IsNullOrWhiteSpace(genre))
             {
-                throw new ArgumentNullException("Genre can not be null or empty.", nameof(genre));
+                throw new ArgumentNullException(nameof(genre), "Genre can not be null or empty.");
             }
             #endregion
             Genre = genre;

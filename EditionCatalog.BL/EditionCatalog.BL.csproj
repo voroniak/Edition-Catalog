@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Controller\EditionController.cs" />
     <Compile Include="Model\Author.cs" />
     <Compile Include="Model\Book.cs" />

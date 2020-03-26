@@ -8,12 +8,13 @@ namespace EditionCatalog.BL.Model
 {
    public abstract class Edition : IComparable
     {
-        public Author Author { get; protected set; }
-        public string Name { get; protected set; }
-        public int CountOfPages { get; protected set; }
-        public int YearOfPublishing { get; protected set; }
-        public double Price { get; protected set; }
-        public Edition(string authorName,
+        public Author Author { get; set;}
+        public string Name { get; set;}
+        public int CountOfPages { get;  set;}
+        public int YearOfPublishing { get; set; }
+        public double Price { get; set; }
+
+        protected Edition(string authorName,
                        string name,
                        int countOfPages,
                        int yearOfPublishing,
@@ -22,7 +23,7 @@ namespace EditionCatalog.BL.Model
             #region checking the conditions
             if (string.IsNullOrWhiteSpace(name))
             {
-                throw new ArgumentNullException("Name can not be null or empty.", nameof(name));
+                throw new ArgumentNullException( nameof(name), "Name can not be null or empty.");
             }
             if(countOfPages <= 0)
             {

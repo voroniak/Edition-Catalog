@@ -14,94 +14,138 @@ namespace EditionCatalog.CMD
 {
     public partial class Form1 : Form
     {
-        public static EditionController _editionController { get; }
+      
+        public static EditionController EditionController { get; }
+        private string _fileName;
         public Form1()
         {
             InitializeComponent();
         }
-         static Form1()
+        static Form1()
         {
-            _editionController = new EditionController();
+            EditionController = new EditionController();
         }
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _editionController.Clear();
+            EditionController.Clear();
             dataGridView1.Rows.Clear();
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
-            string filename = openFileDialog1.FileName;
-            string fileText = System.IO.File.ReadAllText(filename);
-          _editionController.Load(fileText);
-          foreach(var edition in _editionController)
-          {
-                dataGridView1.Rows.Add(((Edition)edition).ToString().Split('\t'));
-          }
-           
+            _fileName = openFileDialog1.FileName;
+            string fileText = System.IO.File.ReadAllText(_fileName);
+          EditionController.Load(fileText);
+          FillInDataGridView();
         }
-        public static void AddNewRow(string [] editionData, bool isBook)
+
+        private void FillInDataGridView()
         {
-            if (isBook)
+            foreach (var edition in EditionController)
             {
-                _editionController.AddBook(editionData[0],
-                                           editionData[1],
-                                           Int32.Parse(editionData[2]),
-                                           Int32.Parse(editionData[3]),
-                                           Double.Parse(editionData[4]),
-                                           "SomeGenre");
-               
+                dataGridView1.Rows.Add(((Edition)edition).ToString().Split('\t'));
             }
+        }
+        public static void AddNewRow(string [] editionData, EditionType editionType)
+        {
+            switch (editionType)
+            {
+                case EditionType.Book:
+                    EditionController.AddBook(editionData[0],
+                        editionData[1],
+                        int.Parse(editionData[2]),
+                        int.Parse(editionData[3]),
+                        double.Parse(editionData[4]),
+                        editionData[5]);
+                    break;
+                case EditionType.Magazine:
+                    EditionController.AddMagazine(editionData[0],
+                        editionData[1],
+                        int.Parse(editionData[2]),
+                        int.Parse(editionData[3]),
+                        double.Parse(editionData[4]),
+                        int.Parse(editionData[5]),
+                        int.Parse(editionData[6]));
+                    break;
+            }
+        }
+
+        public void Update()
+        {
+            dataGridView1.Rows.Clear();
+        }
+        public static void UpdateRow(string[] editionData, EditionType editionType, int rowIndex)
+        {
+            EditionController.UpdateEdition(editionData,rowIndex);
             
         }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+          
         }
 
         private void bookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddNewEdition(true);
+            AddNewEdition(EditionType.Book);
         }
 
         private void magazineToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddNewEdition(false);
+            AddNewEdition(EditionType.Magazine);
         }
-        private void AddNewEdition(bool type)
+        private void AddNewEdition(EditionType editionType)
         {
-            int countBefore = _editionController.Count;
-            ItemForm itemForm = new ItemForm(type);
+            int countBefore = EditionController.Count;
+            ItemForm itemForm = new ItemForm(editionType);
             itemForm.ShowDialog();
-            if (countBefore != _editionController.Count)
+            if (countBefore != EditionController.Count)
             {
-                dataGridView1.Rows.Add(_editionController.Last().ToString().Split('\t'));
+                dataGridView1.Rows.Add(EditionController.Last().ToString().Split('\t'));
             }
         }
+        
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
-                return;
-            // получаем выбранный файл
-            string filename = saveFileDialog1.FileName;
-            // сохраняем текст в файл
             string resultText = string.Empty;
-            foreach(var edition in _editionController)
+            foreach(var edition in EditionController)
             {
-                if(edition is Book)
+                switch (edition)
                 {
-                    resultText += "1\t";
-                    resultText += edition.ToString();
-                    resultText = resultText.Substring(0, resultText.Length-1) + "\n";
-                }
-               else if (edition is Magazine)
-                {
-                    resultText += "0\t";
-                    resultText += edition.ToString();
-                    resultText =resultText.Substring(0, resultText.Length-1) +"\n";
+                    case Book _:
+                        resultText += "1\t";
+                        resultText += edition.ToString();
+                        resultText = resultText.Substring(0, resultText.Length-1) + "\n";
+                        break;
+                    case Magazine _:
+                        resultText += "0\t";
+                        resultText += edition.ToString();
+                        resultText =resultText.Substring(0, resultText.Length-1) +"\n";
+                        break;
                 }
             }
-            System.IO.File.WriteAllText(filename, resultText);
-            MessageBox.Show("Файл сохранен");
+            System.IO.File.WriteAllText(_fileName, resultText);
+            MessageBox.Show("Saved");
         }
 
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var index = dataGridView1.CurrentCell.RowIndex;
+            EditionType editionType = EditionType.Book;
+            switch (EditionController[index])
+            {
+                case Book _:
+                    editionType = EditionType.Book;
+                    break;
+                case Magazine _:
+                    editionType = EditionType.Magazine;
+                    break;
+            }
+            ItemForm itemForm = new ItemForm(editionType, index);
+            itemForm.ShowDialog();
+        }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
