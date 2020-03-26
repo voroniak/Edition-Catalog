@@ -16,6 +16,7 @@ namespace EditionCatalog.CMD
     {
       
         public static EditionController EditionController { get; }
+        public static (List<string>, int) UpdatedEditionData;
         private string _fileName;
         public Form1()
         {
@@ -24,6 +25,7 @@ namespace EditionCatalog.CMD
         static Form1()
         {
             EditionController = new EditionController();
+            UpdatedEditionData = (new List<string>(),0);
         }
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -67,17 +69,6 @@ namespace EditionCatalog.CMD
                     break;
             }
         }
-
-        public void Update()
-        {
-            dataGridView1.Rows.Clear();
-        }
-        public static void UpdateRow(string[] editionData, EditionType editionType, int rowIndex)
-        {
-            EditionController.UpdateEdition(editionData,rowIndex);
-            
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
           
@@ -141,6 +132,9 @@ namespace EditionCatalog.CMD
             }
             ItemForm itemForm = new ItemForm(editionType, index);
             itemForm.ShowDialog();
+            dataGridView1.Rows.Clear();
+            EditionController.UpdateEdition(UpdatedEditionData.Item1.ToArray(),UpdatedEditionData.Item2);
+            FillInDataGridView();
         }
 
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)

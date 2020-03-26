@@ -104,8 +104,9 @@ namespace EditionCatalog.CMD
                     break;
                 case SaveButtonType.Update:
                     
-                    string[] editionData = GetDataFromTextBoxes();
-                    Form1.UpdateRow(editionData,_editionType,_elementIndex);
+                    //string[] editionData = GetDataFromTextBoxes();
+                    //Form1.UpdateRow(editionData,_editionType,_elementIndex);
+                    Form1.UpdatedEditionData = (GetDataFromTextBoxes().ToList(), _elementIndex);
                     break;
                 case SaveButtonType.Delete:
                     break;
