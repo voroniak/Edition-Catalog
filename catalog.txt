@@ -3,3 +3,34 @@
 1	Terry Pratchett	Mor1	450	1985	185,7	185,7	185,7
 1	Річард Докінз	Егоїстичний ген	500	1980	200	200	200
 1	jghbjhb	knknjkn	877	2000	98	98	jbhbhv
+1	Terry Pratchett	Mor	400	1980	180,5	180,5	180,5
+0	Nature Publishing Group	Nature	44	1989	187	12	3
+1	Terry Pratchett	Mor1	450	1985	185,7	185,7	185,7
+1	Річард Докінз	Егоїстичний ген	500	1980	200	200	200
+1	jghbjhb	knknjkn	877	2000	98	98	jbhbhv
+1	Terry Pratchett	Mor	400	1980	180,5	180,5	180,5
+0	Nature Publishing Group	Nature	44	1989	187	12	3
+1	Terry Pratchett	Mor1	450	1985	185,7	185,7	185,7
+1	Річард Докінз	Егоїстичний ген	500	1980	200	200	200
+1	jghbjhb	knknjkn	877	2000	98	98	jbhbhv
+1	Terry Pratchett	Mor	400	1980	180,5	180,5	180,5
+0	Nature Publishing Group	Nature	44	1989	187	12	3
+1	Terry Pratchett	Mor1	450	1985	185,7	185,7	185,7
+1	Річард Докінз	Егоїстичний ген	500	1980	200	200	200
+1	jghbjhb	knknjkn	877	2000	98	98	jbhbhv
+1	Terry Pratchett	Mor	400	1980	180,5	180,5	180,5
+0	Nature Publishing Group	Nature	44	1989	187	12	3
+1	Terry Pratchett	Mor1	450	1985	185,7	185,7	185,7
+1	Річард Докінз	Егоїстичний ген	500	1980	200	200	200
+1	jghbjhb	knknjkn	877	2000	98	98	jbhbhv
+1	Terry Pratchett	Mor	400	1980	180,5	180,5	180,5
+0	Nature Publishing Group	Nature	44	1989	187	12	3
+1	Terry Pratchett	Mor1	450	1985	185,7	185,7	185,7
+1	Річард Докінз	Егоїстичний ген	500	1980	200	200	200
+1	jghbjhb	knknjkn	877	2000	98	98	jbhbhv
+1	Terry Pratchett	Mor	400	1980	180,5	180,5	180,5
+0	Nature Publishing Group	Nature	44	1989	187	12	3
+1	Terry Pratchett	Mor1	450	1985	185,7	185,7	185,7
+1	Річард Докінз	Егоїстичний ген	500	1980	200	200	200
+1	jghbjhb	knknjkn	877	2000	98	98	jbhbhv
+

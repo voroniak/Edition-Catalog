@@ -21,6 +21,7 @@ namespace EditionCatalog.CMD
         public MainForm()
         {
             InitializeComponent();
+            _fileName = "edition.txt";
         }
         static MainForm()
         {
@@ -67,10 +68,7 @@ namespace EditionCatalog.CMD
                     break;
             }
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-          
-        }
+       
 
         private void bookToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -138,10 +136,7 @@ namespace EditionCatalog.CMD
             FillInDataGridView();
         }
 
-        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -154,5 +149,22 @@ namespace EditionCatalog.CMD
             dataGridView1.Rows.Clear();
             FillInDataGridView();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void createNewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            EditionController.Clear();
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
     }
 }

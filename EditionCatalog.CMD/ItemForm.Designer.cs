@@ -33,6 +33,8 @@
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::EditionCatalog.CMD.Properties.Resources.terry4;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Location = new System.Drawing.Point(20, 500);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 50);
@@ -45,8 +47,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 603);
+            this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImage = global::EditionCatalog.CMD.Properties.Resources.terry4;
+            this.ClientSize = new System.Drawing.Size(1282, 603);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ItemForm";
             this.Text = "ItemForm";
             this.ResumeLayout(false);

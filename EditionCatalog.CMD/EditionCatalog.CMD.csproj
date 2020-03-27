@@ -95,5 +95,42 @@
       <Name>EditionCatalog.BL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bc1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bi2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ankhmorpork.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maxresdefault.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="imeges\GRanny-142x300.png" />
+    <Content Include="imeges\greebo2-1-359x400.png" />
+    <Content Include="imeges\Librarian-300x282.png" />
+    <Content Include="imeges\MesOK.png" />
+    <Content Include="imeges\Rincewind-265x300.png" />
+    <Content Include="imeges\Susan-239x300.png" />
+    <Content Include="imeges\Terry.png" />
+    <Content Include="imeges\terry1.png" />
+    <Content Include="imeges\terry2.png" />
+    <Content Include="imeges\terry3.png" />
+    <Content Include="imeges\terry4.png" />
+    <Content Include="imeges\the-turtle-moves-sticker.jpg" />
+    <Content Include="terry2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
