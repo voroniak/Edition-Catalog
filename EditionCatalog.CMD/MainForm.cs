@@ -12,31 +12,29 @@ using System.Windows.Forms;
 
 namespace EditionCatalog.CMD
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
       
         public static EditionController EditionController { get; }
         public static (List<string>, int) UpdatedEditionData;
         private string _fileName;
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
-        static Form1()
+        static MainForm()
         {
             EditionController = new EditionController();
             UpdatedEditionData = (new List<string>(),0);
         }
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditionController.Clear();
-            dataGridView1.Rows.Clear();
-            if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
-                return;
-            _fileName = openFileDialog1.FileName;
+            EditionController.Clear(); dataGridView1.Rows.Clear();
+            if (openFileDialog1.ShowDialog() == DialogResult.Cancel) return; 
+            _fileName = openFileDialog1.FileName; 
             string fileText = System.IO.File.ReadAllText(_fileName);
-          EditionController.Load(fileText);
-          FillInDataGridView();
+            EditionController.Load(fileText);
+            FillInDataGridView();
         }
 
         private void FillInDataGridView()
@@ -56,7 +54,7 @@ namespace EditionCatalog.CMD
                         int.Parse(editionData[2]),
                         int.Parse(editionData[3]),
                         double.Parse(editionData[4]),
-                        editionData[5]);
+                        editionData[5]); 
                     break;
                 case EditionType.Magazine:
                     EditionController.AddMagazine(editionData[0],
@@ -119,8 +117,10 @@ namespace EditionCatalog.CMD
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if(EditionController.Count == 0)return;
             var index = dataGridView1.CurrentCell.RowIndex;
             EditionType editionType = EditionType.Book;
+            UpdatedEditionData = (EditionController[index].ToString().Split('\t').ToList(), index);
             switch (EditionController[index])
             {
                 case Book _:
@@ -130,16 +130,29 @@ namespace EditionCatalog.CMD
                     editionType = EditionType.Magazine;
                     break;
             }
+
             ItemForm itemForm = new ItemForm(editionType, index);
             itemForm.ShowDialog();
             dataGridView1.Rows.Clear();
-            EditionController.UpdateEdition(UpdatedEditionData.Item1.ToArray(),UpdatedEditionData.Item2);
+            EditionController.UpdateEdition(UpdatedEditionData.Item1.ToArray(), UpdatedEditionData.Item2);
             FillInDataGridView();
         }
 
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+            var index = dataGridView1.CurrentCell.RowIndex;
+            if (EditionController.Count == 0) return;
+            if(EditionController.Count <= index)return;
+            if(MessageBox.Show("Are you sure ?","DELETE",MessageBoxButtons.YesNoCancel) == DialogResult.No)return; 
+            EditionController.RemoveAtIndex(index);
+            dataGridView1.Rows.Clear();
+            FillInDataGridView();
         }
     }
 }

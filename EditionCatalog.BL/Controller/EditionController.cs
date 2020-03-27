@@ -75,37 +75,11 @@ namespace EditionCatalog.BL.Controller
             return _editions[_editions.Count - 1];
         }
 
-        //public List<string> LoadEditions(string editionsInfo)
-        //{
-        //    Regex regex = new Regex(@"(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(\w+)\n");
-        //    Match magazineMatch = new Regex(@"(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(\w+)\n").Match(editionsInfo);
-        //    MatchCollection matchCollection = regex.Matches(editionsInfo);
-        //    //= new Regex("(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\n").Match(editionsInfo);
-
-        //    List<string> info = new List<string>();
-        //    for (int i = 0; i < matchCollection.Count; i++)
-        //    {
-        //        Match bookMatch = new Regex("(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\n").Match(editionsInfo);
-        //        if (bookMatch.Length != 0)
-        //        {
-        //            if (bookMatch.Groups[1].Value.ToString() == "1")
-        //            {
-        //                AddBook(bookMatch.Groups[2].Value.ToString(),
-        //                        bookMatch.Groups[3].Value.ToString(),
-        //                        Int32.Parse(bookMatch.Groups[4].Value),
-        //                        Int32.Parse(bookMatch.Groups[5].Value),
-        //                        Decimal.Parse(bookMatch.Groups[7].Value),
-        //                        bookMatch.Groups[7].Value.ToString());
-        //            }
-
-        //        }
-
-        //        //string todelete = editionsInfo.Substring(bookMatch.Index, bookMatch.Length);
-        //        editionsInfo = editionsInfo.Remove(bookMatch.Index, bookMatch.Length);
-        //    }
-
-        //    return info;
-        //}
+        public void RemoveAtIndex(int index)
+        {
+            if(index < 0)return;
+            _editions.RemoveAt(index);
+        }
         public void Load(string editionsInfo)
         {
             editionsInfo = editionsInfo.Replace("\r", "");

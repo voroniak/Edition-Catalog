@@ -43,7 +43,7 @@ namespace EditionCatalog.CMD
         {
             _saveButtonType = SaveButtonType.Update;
             _elementIndex = elementIndex;
-            FillInTextBoxes(Form1.EditionController[elementIndex].ToString());
+            FillInTextBoxes(MainForm.EditionController[elementIndex].ToString());
         }
 
         private void FillInTextBoxes(string editionData)
@@ -100,19 +100,37 @@ namespace EditionCatalog.CMD
             switch (_saveButtonType)
             {
                 case SaveButtonType.Add:
-                    Form1.AddNewRow(_textBoxes.Select(textBox => textBox.Text).ToArray(), _editionType);
+                    switch (MessageBox.Show("Are you sure?", "ADD", MessageBoxButtons.YesNoCancel))
+                    {
+                        case DialogResult.No:
+                            Close();
+                            break;
+                        case DialogResult.Cancel:
+                            return;
+                        case DialogResult.Yes:
+                            MainForm.AddNewRow(_textBoxes.Select(textBox => textBox.Text).ToArray(), _editionType);
+                            break;
+
+                    }
                     break;
                 case SaveButtonType.Update:
-                    
-                    //string[] editionData = GetDataFromTextBoxes();
-                    //Form1.UpdateRow(editionData,_editionType,_elementIndex);
-                    Form1.UpdatedEditionData = (GetDataFromTextBoxes().ToList(), _elementIndex);
+                    switch (MessageBox.Show("Are you sure?", "UPDATE", MessageBoxButtons.YesNoCancel))
+                    {
+                        case DialogResult.No:
+                            Close();
+                            break;
+                        case DialogResult.Cancel:
+                            return;
+                        case DialogResult.Yes:
+                            MainForm.UpdatedEditionData = (GetDataFromTextBoxes().ToList(), _elementIndex);
+                            Close();
+                            break;
+
+                    }
                     break;
                 case SaveButtonType.Delete:
                     break;
             }
-
-            Close();
         }
 
         private string[] GetDataFromTextBoxes()
