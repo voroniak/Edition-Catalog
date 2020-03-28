@@ -16,6 +16,9 @@ namespace EditionCatalog.CMD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            LoadForm loadForm = new LoadForm();
+            loadForm.Show();
+            loadForm.Loading(40);
             Application.Run(new MainForm());
         }
     }

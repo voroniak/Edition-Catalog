@@ -1,4 +1,4 @@
 1	Terry Pratchett	Mor	400	1980	180,5	180,5	180,5
 0	Nature Publishing Group	Nature	44	1989	187	12	3
 1	Terry Pratchett	Mor1	450	1985	185,7	185,7	185,7
-1	dgdf	dfgfdg	231	2000	231	231	dsfsdffs
+1	dgdf	dfgfdg	231	2000	231	231	231

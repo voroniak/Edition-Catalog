@@ -57,11 +57,11 @@ namespace EditionCatalog.CMD
 
         public void AddTextBoxes(int count)
         {
-            int x = 590;
-            int y = 90;
+            int x = 600;
+            int y = 110;
             for (int i = 0; i < count; i++)
             {
-                TextBox textBox = new TextBox {Location = new Point(x, y), Size = new Size(200, 22)};
+                TextBox textBox = new TextBox {Location = new Point(x, y), Size = new Size(200, 30), BackColor = Color.Wheat };
                 _textBoxes.Add(textBox);
                 Controls.Add(_textBoxes[i]);
                 y += 50;
@@ -73,9 +73,10 @@ namespace EditionCatalog.CMD
             {
                 Label label = new Label
                 {
-                    Text = lb, Location = new Point(450, h), Size = new Size(100, 30), ForeColor = Color.Black,
-                    Font = new Font("Tobota", 14, System.Drawing.FontStyle.Bold), BackColor = Color.White,
-                    BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+                    Text = lb, Location = new Point(440, h), Size = new Size(160, 30), ForeColor = Color.Black,
+                    Font = new Font("Tobota", 12, System.Drawing.FontStyle.Bold), BackColor = Color.Transparent,
+                    //BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+                    TextAlign = ContentAlignment.BottomCenter
                 };
                 h += 50;
                 _labels.Add(label);
@@ -84,7 +85,7 @@ namespace EditionCatalog.CMD
         }
         private void AddLabel()
         {
-            int h = 90;
+            int h = 100;
             SetLabel(_labelNames, ref h);
             switch (_editionType)
             {

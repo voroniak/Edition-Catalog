@@ -20,7 +20,11 @@ namespace EditionCatalog.CMD
         private string _fileName;
         public MainForm()
         {
+          
+            //loadForm.ShowDialog();
+            //loadForm.Loading(5);
             InitializeComponent();
+            LoadForm loadForm = new LoadForm();
             _fileName = "edition.txt";
         }
         static MainForm()

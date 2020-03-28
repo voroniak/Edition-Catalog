@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.FileMenuButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.createNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemMenuButton = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,19 +47,13 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.YearOfPublishing = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.СountOfPages = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.FileMenuButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.createNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -62,7 +62,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileMenuButton,
@@ -70,9 +70,69 @@
             this.HelpMenuButton});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1382, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1382, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menu";
+            // 
+            // FileMenuButton
+            // 
+            this.FileMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.FileMenuButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createNewToolStripMenuItem,
+            this.openToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.saveAsToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.FileMenuButton.ForeColor = System.Drawing.Color.White;
+            this.FileMenuButton.Image = global::EditionCatalog.CMD.Properties.Resources.Terry;
+            this.FileMenuButton.Name = "FileMenuButton";
+            this.FileMenuButton.Size = new System.Drawing.Size(66, 24);
+            this.FileMenuButton.Text = "File";
+            // 
+            // createNewToolStripMenuItem
+            // 
+            this.createNewToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.createNewToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
+            this.createNewToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.createNewToolStripMenuItem.Text = "Create new";
+            this.createNewToolStripMenuItem.Click += new System.EventHandler(this.createNewToolStripMenuItem_Click);
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.openToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.saveToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.saveAsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.saveAsToolStripMenuItem.Text = "Save as";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.exitToolStripMenuItem.Image = global::EditionCatalog.CMD.Properties.Resources.delete;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // ItemMenuButton
             // 
@@ -169,7 +229,7 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Black;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -178,6 +238,7 @@
             this.YearOfPublishing,
             this.СountOfPages,
             this.Price});
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.Location = new System.Drawing.Point(20, 50);
             this.dataGridView1.MaximumSize = new System.Drawing.Size(800, 300);
             this.dataGridView1.MinimumSize = new System.Drawing.Size(600, 300);
@@ -186,39 +247,8 @@
             this.dataGridView1.RowHeadersWidth = 30;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(740, 300);
+            this.dataGridView1.Size = new System.Drawing.Size(750, 300);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // Author
-            // 
-            this.Author.FillWeight = 200F;
-            this.Author.HeaderText = "Author";
-            this.Author.MinimumWidth = 6;
-            this.Author.Name = "Author";
-            // 
-            // BookName
-            // 
-            this.BookName.HeaderText = "Name";
-            this.BookName.MinimumWidth = 6;
-            this.BookName.Name = "BookName";
-            // 
-            // YearOfPublishing
-            // 
-            this.YearOfPublishing.HeaderText = "Year  of publishing";
-            this.YearOfPublishing.MinimumWidth = 6;
-            this.YearOfPublishing.Name = "YearOfPublishing";
-            // 
-            // СountOfPages
-            // 
-            this.СountOfPages.HeaderText = "Сount of pages";
-            this.СountOfPages.MinimumWidth = 6;
-            this.СountOfPages.Name = "СountOfPages";
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Price";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
             // 
             // pictureBox3
             // 
@@ -245,71 +275,48 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // FileMenuButton
+            // Author
             // 
-            this.FileMenuButton.BackColor = System.Drawing.Color.Black;
-            this.FileMenuButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createNewToolStripMenuItem,
-            this.openToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.FileMenuButton.ForeColor = System.Drawing.Color.White;
-            this.FileMenuButton.Image = global::EditionCatalog.CMD.Properties.Resources.Terry;
-            this.FileMenuButton.Name = "FileMenuButton";
-            this.FileMenuButton.Size = new System.Drawing.Size(66, 24);
-            this.FileMenuButton.Text = "File";
+            this.Author.FillWeight = 200F;
+            this.Author.HeaderText = "Author";
+            this.Author.MinimumWidth = 6;
+            this.Author.Name = "Author";
+            this.Author.ReadOnly = true;
+            this.Author.Width = 120;
             // 
-            // createNewToolStripMenuItem
+            // BookName
             // 
-            this.createNewToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.createNewToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
-            this.createNewToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
-            this.createNewToolStripMenuItem.Text = "Create new";
-            this.createNewToolStripMenuItem.Click += new System.EventHandler(this.createNewToolStripMenuItem_Click);
+            this.BookName.HeaderText = "Name";
+            this.BookName.MinimumWidth = 6;
+            this.BookName.Name = "BookName";
+            this.BookName.ReadOnly = true;
             // 
-            // openToolStripMenuItem
+            // YearOfPublishing
             // 
-            this.openToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.openToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
-            this.openToolStripMenuItem.Text = "Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            this.YearOfPublishing.HeaderText = "Year  of publishing";
+            this.YearOfPublishing.MinimumWidth = 6;
+            this.YearOfPublishing.Name = "YearOfPublishing";
+            this.YearOfPublishing.ReadOnly = true;
             // 
-            // saveToolStripMenuItem
+            // СountOfPages
             // 
-            this.saveToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.saveToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            this.СountOfPages.HeaderText = "Сount of pages";
+            this.СountOfPages.MinimumWidth = 6;
+            this.СountOfPages.Name = "СountOfPages";
+            this.СountOfPages.ReadOnly = true;
             // 
-            // saveAsToolStripMenuItem
+            // Price
             // 
-            this.saveAsToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.saveAsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
-            this.saveAsToolStripMenuItem.Text = "Save as";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.exitToolStripMenuItem.Image = global::EditionCatalog.CMD.Properties.Resources.delete;
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.Price.HeaderText = "Price";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(1382, 603);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
@@ -353,12 +360,12 @@
         private System.Windows.Forms.ToolStripMenuItem bookToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem magazineToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Author;
         private System.Windows.Forms.DataGridViewTextBoxColumn BookName;
         private System.Windows.Forms.DataGridViewTextBoxColumn YearOfPublishing;
         private System.Windows.Forms.DataGridViewTextBoxColumn СountOfPages;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LoadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadForm.Designer.cs">
+      <DependentUpon>LoadForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="LoadForm.resx">
+      <DependentUpon>LoadForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +127,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="imeges\addandupdate.png" />
     <Content Include="imeges\GRanny-142x300.png" />
     <Content Include="imeges\greebo2-1-359x400.png" />
     <Content Include="imeges\Librarian-300x282.png" />
