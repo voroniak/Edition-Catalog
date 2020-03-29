@@ -120,7 +120,7 @@ namespace EditionCatalog.CMD
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if(EditionController.Count == 0)return;
-            var index = dataGridView1.CurrentCell.RowIndex;
+            var index = dataGridView1.CurrentCell.RowIndex;   
             EditionType editionType = EditionType.Book;
             UpdatedEditionData = (EditionController[index].ToString().Split('\t').ToList(), index);
             switch (EditionController[index])
