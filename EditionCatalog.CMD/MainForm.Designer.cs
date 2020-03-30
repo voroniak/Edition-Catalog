@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.FileMenuButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.createNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemMenuButton = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,10 +48,22 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.FileMenuButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.createNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.AddBookButton = new System.Windows.Forms.Button();
+            this.UpdateButton = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.AddMagazineButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -70,69 +76,9 @@
             this.HelpMenuButton});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1382, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1382, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menu";
-            // 
-            // FileMenuButton
-            // 
-            this.FileMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
-            this.FileMenuButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createNewToolStripMenuItem,
-            this.openToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.FileMenuButton.ForeColor = System.Drawing.Color.White;
-            this.FileMenuButton.Image = global::EditionCatalog.CMD.Properties.Resources.Terry;
-            this.FileMenuButton.Name = "FileMenuButton";
-            this.FileMenuButton.Size = new System.Drawing.Size(66, 24);
-            this.FileMenuButton.Text = "File";
-            // 
-            // createNewToolStripMenuItem
-            // 
-            this.createNewToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.createNewToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
-            this.createNewToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
-            this.createNewToolStripMenuItem.Text = "Create new";
-            this.createNewToolStripMenuItem.Click += new System.EventHandler(this.createNewToolStripMenuItem_Click);
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.openToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
-            this.openToolStripMenuItem.Text = "Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.saveToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.saveAsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
-            this.saveAsToolStripMenuItem.Text = "Save as";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.exitToolStripMenuItem.Image = global::EditionCatalog.CMD.Properties.Resources.delete;
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // ItemMenuButton
             // 
@@ -142,7 +88,7 @@
             this.deleteToolStripMenuItem});
             this.ItemMenuButton.ForeColor = System.Drawing.Color.White;
             this.ItemMenuButton.Name = "ItemMenuButton";
-            this.ItemMenuButton.Size = new System.Drawing.Size(53, 24);
+            this.ItemMenuButton.Size = new System.Drawing.Size(53, 26);
             this.ItemMenuButton.Text = "Item";
             // 
             // addNewToolStripMenuItem
@@ -199,7 +145,7 @@
             this.aboutAuthorToolStripMenuItem});
             this.HelpMenuButton.ForeColor = System.Drawing.Color.White;
             this.HelpMenuButton.Name = "HelpMenuButton";
-            this.HelpMenuButton.Size = new System.Drawing.Size(55, 24);
+            this.HelpMenuButton.Size = new System.Drawing.Size(55, 26);
             this.HelpMenuButton.Text = "Help";
             // 
             // viewHelpToolStripMenuItem
@@ -316,12 +262,140 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // FileMenuButton
+            // 
+            this.FileMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.FileMenuButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createNewToolStripMenuItem,
+            this.openToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.saveAsToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.FileMenuButton.ForeColor = System.Drawing.Color.White;
+            this.FileMenuButton.Image = global::EditionCatalog.CMD.Properties.Resources.Terry;
+            this.FileMenuButton.Name = "FileMenuButton";
+            this.FileMenuButton.Size = new System.Drawing.Size(66, 26);
+            this.FileMenuButton.Text = "File";
+            // 
+            // createNewToolStripMenuItem
+            // 
+            this.createNewToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.createNewToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
+            this.createNewToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.createNewToolStripMenuItem.Text = "Create new";
+            this.createNewToolStripMenuItem.Click += new System.EventHandler(this.createNewToolStripMenuItem_Click);
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.openToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.saveToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.saveAsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.saveAsToolStripMenuItem.Text = "Save as";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.exitToolStripMenuItem.Image = global::EditionCatalog.CMD.Properties.Resources.delete;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.AddMagazineButton);
+            this.panel1.Controls.Add(this.DeleteButton);
+            this.panel1.Controls.Add(this.UpdateButton);
+            this.panel1.Controls.Add(this.AddBookButton);
+            this.panel1.Location = new System.Drawing.Point(30, 370);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 200);
+            this.panel1.TabIndex = 7;
+            // 
+            // AddBookButton
+            // 
+            this.AddBookButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(148)))), ((int)(((byte)(163)))));
+            this.AddBookButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.AddBookButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddBookButton.ForeColor = System.Drawing.Color.White;
+            this.AddBookButton.Location = new System.Drawing.Point(0, 0);
+            this.AddBookButton.Name = "AddBookButton";
+            this.AddBookButton.Size = new System.Drawing.Size(100, 100);
+            this.AddBookButton.TabIndex = 0;
+            this.AddBookButton.Text = "Add Book";
+            this.AddBookButton.UseVisualStyleBackColor = true;
+            this.AddBookButton.Click += new System.EventHandler(this.AddBookButton_Click);
+            // 
+            // UpdateButton
+            // 
+            this.UpdateButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(148)))), ((int)(((byte)(163)))));
+            this.UpdateButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateButton.ForeColor = System.Drawing.Color.White;
+            this.UpdateButton.Location = new System.Drawing.Point(0, 100);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(100, 100);
+            this.UpdateButton.TabIndex = 1;
+            this.UpdateButton.Text = "Update";
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(148)))), ((int)(((byte)(163)))));
+            this.DeleteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteButton.Location = new System.Drawing.Point(100, 100);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(100, 100);
+            this.DeleteButton.TabIndex = 2;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // AddMagazineButton
+            // 
+            this.AddMagazineButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(148)))), ((int)(((byte)(163)))));
+            this.AddMagazineButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.AddMagazineButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddMagazineButton.ForeColor = System.Drawing.Color.White;
+            this.AddMagazineButton.Location = new System.Drawing.Point(100, 0);
+            this.AddMagazineButton.Name = "AddMagazineButton";
+            this.AddMagazineButton.Size = new System.Drawing.Size(100, 100);
+            this.AddMagazineButton.TabIndex = 3;
+            this.AddMagazineButton.Text = "Add Magazine";
+            this.AddMagazineButton.UseVisualStyleBackColor = true;
+            this.AddMagazineButton.Click += new System.EventHandler(this.AddMagazineButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(1382, 603);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
@@ -338,6 +412,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,6 +446,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn YearOfPublishing;
         private System.Windows.Forms.DataGridViewTextBoxColumn СountOfPages;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button AddMagazineButton;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button UpdateButton;
+        private System.Windows.Forms.Button AddBookButton;
     }
 }
 

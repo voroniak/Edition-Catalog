@@ -119,8 +119,13 @@ namespace EditionCatalog.CMD
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(EditionController.Count == 0)return;
-            var index = dataGridView1.CurrentCell.RowIndex;   
+            UpdateOption();
+        }
+
+        private void UpdateOption()
+        {
+            if (EditionController.Count == 0) return;
+            var index = dataGridView1.CurrentCell.RowIndex;
             EditionType editionType = EditionType.Book;
             UpdatedEditionData = (EditionController[index].ToString().Split('\t').ToList(), index);
             switch (EditionController[index])
@@ -140,20 +145,22 @@ namespace EditionCatalog.CMD
             FillInDataGridView();
         }
 
-       
-
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
-            var index = dataGridView1.CurrentCell.RowIndex;
+            DeleteOption();
+        }
+
+        private void DeleteOption()
+        {
+            if(dataGridView1.Rows.Count == 0)return;
             if (EditionController.Count == 0) return;
-            if(EditionController.Count <= index)return;
-            if(MessageBox.Show("Are you sure ?","DELETE",MessageBoxButtons.YesNoCancel) == DialogResult.No)return; 
+            var index = dataGridView1.CurrentCell.RowIndex;
+            if (EditionController.Count <= index) return;
+            if (MessageBox.Show("Are you sure ?", "DELETE", MessageBoxButtons.YesNoCancel) == DialogResult.No) return;
             EditionController.RemoveAtIndex(index);
             dataGridView1.Rows.Clear();
             FillInDataGridView();
         }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
@@ -170,5 +177,24 @@ namespace EditionCatalog.CMD
             Close();
         }
 
+        private void AddBookButton_Click(object sender, EventArgs e)
+        {
+            AddNewEdition(EditionType.Book);
+        }
+
+        private void AddMagazineButton_Click(object sender, EventArgs e)
+        {
+            AddNewEdition(EditionType.Magazine);
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            DeleteOption();
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            UpdateOption();
+        }
     }
 }
