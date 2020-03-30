@@ -47,13 +47,13 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.YearOfPublishing = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.СountOfPages = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -250,6 +250,47 @@
             this.dataGridView1.Size = new System.Drawing.Size(750, 300);
             this.dataGridView1.TabIndex = 1;
             // 
+            // Author
+            // 
+            this.Author.FillWeight = 200F;
+            this.Author.HeaderText = "Author";
+            this.Author.MinimumWidth = 6;
+            this.Author.Name = "Author";
+            this.Author.ReadOnly = true;
+            this.Author.Width = 120;
+            // 
+            // BookName
+            // 
+            this.BookName.HeaderText = "Name";
+            this.BookName.MinimumWidth = 6;
+            this.BookName.Name = "BookName";
+            this.BookName.ReadOnly = true;
+            this.BookName.Width = 125;
+            // 
+            // YearOfPublishing
+            // 
+            this.YearOfPublishing.HeaderText = "Year  of publishing";
+            this.YearOfPublishing.MinimumWidth = 6;
+            this.YearOfPublishing.Name = "YearOfPublishing";
+            this.YearOfPublishing.ReadOnly = true;
+            this.YearOfPublishing.Width = 125;
+            // 
+            // СountOfPages
+            // 
+            this.СountOfPages.HeaderText = "Сount of pages";
+            this.СountOfPages.MinimumWidth = 6;
+            this.СountOfPages.Name = "СountOfPages";
+            this.СountOfPages.ReadOnly = true;
+            this.СountOfPages.Width = 125;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Price";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            this.Price.Width = 125;
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -275,43 +316,6 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // Author
-            // 
-            this.Author.FillWeight = 200F;
-            this.Author.HeaderText = "Author";
-            this.Author.MinimumWidth = 6;
-            this.Author.Name = "Author";
-            this.Author.ReadOnly = true;
-            this.Author.Width = 120;
-            // 
-            // BookName
-            // 
-            this.BookName.HeaderText = "Name";
-            this.BookName.MinimumWidth = 6;
-            this.BookName.Name = "BookName";
-            this.BookName.ReadOnly = true;
-            // 
-            // YearOfPublishing
-            // 
-            this.YearOfPublishing.HeaderText = "Year  of publishing";
-            this.YearOfPublishing.MinimumWidth = 6;
-            this.YearOfPublishing.Name = "YearOfPublishing";
-            this.YearOfPublishing.ReadOnly = true;
-            // 
-            // СountOfPages
-            // 
-            this.СountOfPages.HeaderText = "Сount of pages";
-            this.СountOfPages.MinimumWidth = 6;
-            this.СountOfPages.Name = "СountOfPages";
-            this.СountOfPages.ReadOnly = true;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Price";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -327,6 +331,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(1400, 650);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

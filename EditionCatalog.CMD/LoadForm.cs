@@ -14,20 +14,21 @@ namespace EditionCatalog.CMD
     {
         public LoadForm()
         {
-        
             InitializeComponent();
+            timer1.Start();
         }
 
-        public void Loading(int seconds)
+        private void LoadForm_Load(object sender, EventArgs e)
         {
-            int time = 100 / seconds;
-            for (int i = 0; i < seconds; i++)
-            {
-                progressBar1.Value += time;
-                System.Threading.Thread.Sleep(100);
-            }
-            Close();
+
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            progressBar1.Value +=10;
+            if (progressBar1.Value == 100) { timer1.Stop(); }
+        }
+
        
     }
 }

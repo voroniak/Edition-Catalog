@@ -118,58 +118,97 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="addandupdate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imeges\addandupdate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Rincewind-265x3001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imeges\Rincewind-265x300.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="greebo2-1-359x400" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imeges\greebo2-1-359x400.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Librarian-300x282" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imeges\Librarian-300x282.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="addandupdate1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imeges\addandupdate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="maxresdefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\maxresdefault.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="terry2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imeges\terry2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="turtle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\turtle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Terry" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Terry.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MesOK" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imeges\MesOK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="the-turtle-moves-sticker" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imeges\the-turtle-moves-sticker.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bi2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bi2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Rincewind-265x300" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imeges\Rincewind-265x300.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bc1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bc1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Rincewind-265x3002" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rincewind-265x300.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="the-turtle-moves-sticker2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\the-turtle-moves-sticker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="addandupdate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imeges\addandupdate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Moist-252x300" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Moist-252x300.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="terry1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imeges\terry1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="maxresdefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\maxresdefault.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="greebo2-1-359x400" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imeges\greebo2-1-359x400.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="turtlepng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\turtlepng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="addandupdate1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imeges\addandupdate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="turtle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\turtle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Librarian-300x282" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imeges\Librarian-300x282.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MesOK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imeges\MesOK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ankhmorpork" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ankhmorpork.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Vetinari-170x300" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Vetinari-170x300.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ankhmorpork1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ankhmorpork1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Librarian-300x2821" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imeges\Librarian-300x282.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="the-turtle-moves-sticker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imeges\the-turtle-moves-sticker.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="the-turtle-moves-sticker1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\the-turtle-moves-sticker.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="terry3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imeges\terry3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="terry4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imeges\terry4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="terry3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imeges\terry3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="terry2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imeges\terry2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vimes-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vimes-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rincewind-265x300" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imeges\Rincewind-265x300.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GRanny-142x300" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GRanny-142x300.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

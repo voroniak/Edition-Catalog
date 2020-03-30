@@ -25,22 +25,22 @@ namespace EditionCatalog.BL.Controller
         }
 
         public void AddBook(string authorName,
-            string name,
-            int countOfPages,
-            int yearOfPublishing,
-            double price,
-            string genre)
+                            string name,
+                            int countOfPages,
+                            int yearOfPublishing,
+                            double price,
+                            string genre)
         {
             _editions.Add(new Book(authorName, name, countOfPages, yearOfPublishing, price, genre));
         }
 
         public void AddMagazine(string authorName,
-            string name,
-            int countOfPages,
-            int yearOfPublishing,
-            double price,
-            int periodicalPerMonth,
-            int number)
+                                string name,
+                                int countOfPages,
+                                int yearOfPublishing,
+                                double price,
+                                int periodicalPerMonth,
+                                int number)
         {
             _editions.Add(new Magazine(authorName, name, countOfPages, yearOfPublishing, price, periodicalPerMonth,
                 number));
@@ -130,6 +130,7 @@ namespace EditionCatalog.BL.Controller
             get => _editions[index];
             set => _editions[index] = value;
         }
+
     }
     public enum EditionType
     {

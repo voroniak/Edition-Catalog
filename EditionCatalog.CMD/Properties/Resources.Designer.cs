@@ -93,6 +93,16 @@ namespace EditionCatalog.CMD.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ankhmorpork1 {
+            get {
+                object obj = ResourceManager.GetObject("ankhmorpork1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bc {
             get {
                 object obj = ResourceManager.GetObject("bc", resourceCulture);
@@ -133,6 +143,16 @@ namespace EditionCatalog.CMD.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GRanny_142x300 {
+            get {
+                object obj = ResourceManager.GetObject("GRanny-142x300", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap greebo2_1_359x400 {
             get {
                 object obj = ResourceManager.GetObject("greebo2-1-359x400", resourceCulture);
@@ -146,6 +166,16 @@ namespace EditionCatalog.CMD.Properties {
         internal static System.Drawing.Bitmap Librarian_300x282 {
             get {
                 object obj = ResourceManager.GetObject("Librarian-300x282", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Librarian_300x2821 {
+            get {
+                object obj = ResourceManager.GetObject("Librarian-300x2821", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +203,39 @@ namespace EditionCatalog.CMD.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Moist_252x300 {
+            get {
+                object obj = ResourceManager.GetObject("Moist-252x300", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Rincewind_265x300 {
             get {
                 object obj = ResourceManager.GetObject("Rincewind-265x300", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rincewind_265x3001 {
+            get {
+                object obj = ResourceManager.GetObject("Rincewind-265x3001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rincewind_265x3002 {
+            get {
+                object obj = ResourceManager.GetObject("Rincewind-265x3002", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -236,6 +296,76 @@ namespace EditionCatalog.CMD.Properties {
         internal static System.Drawing.Bitmap the_turtle_moves_sticker {
             get {
                 object obj = ResourceManager.GetObject("the-turtle-moves-sticker", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap the_turtle_moves_sticker1 {
+            get {
+                object obj = ResourceManager.GetObject("the-turtle-moves-sticker1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap the_turtle_moves_sticker2 {
+            get {
+                object obj = ResourceManager.GetObject("the-turtle-moves-sticker2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap turtle {
+            get {
+                object obj = ResourceManager.GetObject("turtle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap turtle1 {
+            get {
+                object obj = ResourceManager.GetObject("turtle1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap turtlepng {
+            get {
+                object obj = ResourceManager.GetObject("turtlepng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Vetinari_170x300 {
+            get {
+                object obj = ResourceManager.GetObject("Vetinari-170x300", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vimes_1 {
+            get {
+                object obj = ResourceManager.GetObject("vimes-1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

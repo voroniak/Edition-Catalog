@@ -140,6 +140,17 @@
     <Content Include="imeges\terry3.png" />
     <Content Include="imeges\terry4.png" />
     <Content Include="imeges\the-turtle-moves-sticker.jpg" />
+    <None Include="Resources\the-turtle-moves-sticker.jpg" />
+    <None Include="Resources\the-turtle-moves-sticker.png" />
+    <None Include="Resources\turtle.png" />
+    <None Include="Resources\turtle1.png" />
+    <None Include="Resources\turtlepng.png" />
+    <None Include="Resources\ankhmorpork1.png" />
+    <None Include="Resources\vimes-1.png" />
+    <None Include="Resources\Vetinari-170x300.png" />
+    <None Include="Resources\Rincewind-265x300.png" />
+    <None Include="Resources\Moist-252x300.png" />
+    <None Include="Resources\GRanny-142x300.png" />
     <Content Include="terry2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
