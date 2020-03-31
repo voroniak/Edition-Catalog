@@ -20,11 +20,7 @@ namespace EditionCatalog.CMD
         private string _fileName;
         public MainForm()
         {
-          
-            //loadForm.ShowDialog();
-            //loadForm.Loading(5);
             InitializeComponent();
-            LoadForm loadForm = new LoadForm();
             _fileName = "edition.txt";
         }
         static MainForm()
@@ -46,7 +42,7 @@ namespace EditionCatalog.CMD
         {
             foreach (var edition in EditionController)
             {
-                dataGridView1.Rows.Add(((Edition)edition).ToString().Split('\t'));
+                dataGridView1.Rows.Add(edition.ToString().Split('\t'));
             }
         }
         public static void AddNewRow(string [] editionData, EditionType editionType)
@@ -127,15 +123,18 @@ namespace EditionCatalog.CMD
             if (EditionController.Count == 0) return;
             var index = dataGridView1.CurrentCell.RowIndex;
             EditionType editionType = EditionType.Book;
-            UpdatedEditionData = (EditionController[index].ToString().Split('\t').ToList(), index);
             switch (EditionController[index])
             {
                 case Book _:
+                    UpdatedEditionData = (((Book)EditionController[index]).ToString().Split('\t').ToList(), index);
                     editionType = EditionType.Book;
                     break;
                 case Magazine _:
+                    UpdatedEditionData = (((Magazine)EditionController[index]).ToString().Split('\t').ToList(), index);
                     editionType = EditionType.Magazine;
                     break;
+                default:
+                    return;
             }
 
             ItemForm itemForm = new ItemForm(editionType, index);
@@ -196,5 +195,6 @@ namespace EditionCatalog.CMD
         {
             UpdateOption();
         }
+
     }
 }
