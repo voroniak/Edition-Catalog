@@ -131,6 +131,7 @@ namespace EditionCatalog.BL.Controller
             set => _editions[index] = value;
         }
 
+       
     }
     public enum EditionType
     {

@@ -30,7 +30,8 @@ namespace EditionCatalog.CMD
         }
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditionController.Clear(); dataGridView1.Rows.Clear();
+            EditionController.Clear();
+            dataGridView1.Rows.Clear();
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel) return; 
             _fileName = openFileDialog1.FileName; 
             string fileText = System.IO.File.ReadAllText(_fileName);
@@ -194,6 +195,66 @@ namespace EditionCatalog.CMD
         private void UpdateButton_Click(object sender, EventArgs e)
         {
             UpdateOption();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            int w = Screen.PrimaryScreen.Bounds.Width;
+            int h = Screen.PrimaryScreen.Bounds.Height;
+            Location = new Point(0,0);
+            Size = new Size(w,h);
+        }
+
+        private void ApplyButton_Click(object sender, EventArgs e)
+        {
+            List<string> types = (from object s in TypesListBox.CheckedItems select s.ToString()).ToList();
+            var authorName = AuothorNameTextBox.Text;
+            double minPrice = 0;
+            double maxPrice = EditionController[0].Price;
+            foreach (Edition edition in EditionController)
+            {
+                if (edition.Price > maxPrice)
+                {
+                    minPrice = edition.Price;
+                }
+            }
+            if (!string.IsNullOrEmpty(MinPriceTextBox.Text))
+            {
+                minPrice = Double.Parse(MinPriceTextBox.Text);
+            }
+            if (!string.IsNullOrEmpty(MaxPriceTextBox.Text))
+            {
+                maxPrice = Double.Parse(MaxPriceTextBox.Text);
+            }
+            List<Edition> editions = new List<Edition>();
+            switch (types.Count)
+            {
+                case 1:
+                    switch (types[0])
+                    {
+                        case "Magazines":
+                            editions.AddRange(EditionController.OfType<Magazine>());
+                            break;
+                        case "Books":
+                            editions.AddRange(EditionController.OfType<Book>());
+                            break;
+                    }
+                    break;
+                case 2:
+                    editions.AddRange(EditionController.OfType<Edition>());
+                    break;
+                case 0:
+                    editions.AddRange(EditionController.OfType<Edition>());
+                    break;
+            }
+            editions = editions.Where(edition => edition.Author.Name == authorName).ToList();
+            editions = editions.Where(edition => edition.Price >= minPrice && edition.Price <= maxPrice).ToList();
+            dataGridView1.Rows.Clear();
+            foreach (var edition in editions)
+            {
+                dataGridView1.Rows.Add(edition.ToString().Split('\t'));
+            }
+
         }
 
     }

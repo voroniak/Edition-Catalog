@@ -54,28 +54,27 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.AddMagazineButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.AddBookButton = new System.Windows.Forms.Button();
             this.SelectEditionTypeLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.AuothorNameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SelectPanel = new System.Windows.Forms.Panel();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ApplyButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.MaxPriceTextBox = new System.Windows.Forms.TextBox();
+            this.MinPriceTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.TypesListBox = new System.Windows.Forms.CheckedListBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -253,7 +252,9 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -264,7 +265,7 @@
             this.Price});
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.Location = new System.Drawing.Point(270, 160);
-            this.dataGridView1.MaximumSize = new System.Drawing.Size(900, 300);
+            this.dataGridView1.MaximumSize = new System.Drawing.Size(1800, 1000);
             this.dataGridView1.MinimumSize = new System.Drawing.Size(600, 300);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -281,7 +282,6 @@
             this.Author.MinimumWidth = 6;
             this.Author.Name = "Author";
             this.Author.ReadOnly = true;
-            this.Author.Width = 120;
             // 
             // BookName
             // 
@@ -289,7 +289,6 @@
             this.BookName.MinimumWidth = 6;
             this.BookName.Name = "BookName";
             this.BookName.ReadOnly = true;
-            this.BookName.Width = 125;
             // 
             // YearOfPublishing
             // 
@@ -297,7 +296,6 @@
             this.YearOfPublishing.MinimumWidth = 6;
             this.YearOfPublishing.Name = "YearOfPublishing";
             this.YearOfPublishing.ReadOnly = true;
-            this.YearOfPublishing.Width = 125;
             // 
             // СountOfPages
             // 
@@ -305,7 +303,6 @@
             this.СountOfPages.MinimumWidth = 6;
             this.СountOfPages.Name = "СountOfPages";
             this.СountOfPages.ReadOnly = true;
-            this.СountOfPages.Width = 125;
             // 
             // Price
             // 
@@ -313,7 +310,6 @@
             this.Price.MinimumWidth = 6;
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
-            this.Price.Width = 125;
             // 
             // pictureBox3
             // 
@@ -339,13 +335,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(1182, 229);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 200);
-            this.panel1.TabIndex = 7;
             // 
             // AddMagazineButton
             // 
@@ -407,8 +396,7 @@
             // 
             // SelectEditionTypeLabel
             // 
-            this.SelectEditionTypeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.SelectEditionTypeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SelectEditionTypeLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(60)))), ((int)(((byte)(92)))));
             this.SelectEditionTypeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -417,26 +405,26 @@
             this.SelectEditionTypeLabel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.SelectEditionTypeLabel.Location = new System.Drawing.Point(10, 10);
             this.SelectEditionTypeLabel.Name = "SelectEditionTypeLabel";
-            this.SelectEditionTypeLabel.Size = new System.Drawing.Size(248, 50);
+            this.SelectEditionTypeLabel.Size = new System.Drawing.Size(250, 52);
             this.SelectEditionTypeLabel.TabIndex = 0;
             this.SelectEditionTypeLabel.Text = "Select All";
             this.SelectEditionTypeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // AuothorNameTextBox
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.AuothorNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            this.AuothorNameTextBox.AutoCompleteCustomSource.AddRange(new string[] {
             "Book",
             "Magazine"});
-            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(10, 180);
-            this.textBox1.MinimumSize = new System.Drawing.Size(100, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 22);
-            this.textBox1.TabIndex = 2;
+            this.AuothorNameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.AuothorNameTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.AuothorNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AuothorNameTextBox.Location = new System.Drawing.Point(10, 180);
+            this.AuothorNameTextBox.MinimumSize = new System.Drawing.Size(100, 2);
+            this.AuothorNameTextBox.Name = "AuothorNameTextBox";
+            this.AuothorNameTextBox.Size = new System.Drawing.Size(252, 22);
+            this.AuothorNameTextBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -448,28 +436,29 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(10, 120);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(250, 50);
+            this.label1.Size = new System.Drawing.Size(252, 50);
             this.label1.TabIndex = 1;
             this.label1.Text = "Where author\'s name";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SelectPanel
             // 
+            this.SelectPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.SelectPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(60)))), ((int)(((byte)(92)))));
-            this.SelectPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SelectPanel.Controls.Add(this.textBox4);
             this.SelectPanel.Controls.Add(this.label8);
             this.SelectPanel.Controls.Add(this.textBox6);
             this.SelectPanel.Controls.Add(this.label6);
-            this.SelectPanel.Controls.Add(this.button1);
+            this.SelectPanel.Controls.Add(this.ApplyButton);
             this.SelectPanel.Controls.Add(this.label5);
-            this.SelectPanel.Controls.Add(this.textBox3);
-            this.SelectPanel.Controls.Add(this.textBox2);
+            this.SelectPanel.Controls.Add(this.MaxPriceTextBox);
+            this.SelectPanel.Controls.Add(this.MinPriceTextBox);
             this.SelectPanel.Controls.Add(this.label4);
             this.SelectPanel.Controls.Add(this.label3);
             this.SelectPanel.Controls.Add(this.label2);
-            this.SelectPanel.Controls.Add(this.checkedListBox1);
-            this.SelectPanel.Controls.Add(this.textBox1);
+            this.SelectPanel.Controls.Add(this.TypesListBox);
+            this.SelectPanel.Controls.Add(this.AuothorNameTextBox);
             this.SelectPanel.Controls.Add(this.label1);
             this.SelectPanel.Controls.Add(this.SelectEditionTypeLabel);
             this.SelectPanel.Location = new System.Drawing.Point(0, 30);
@@ -477,88 +466,145 @@
             this.SelectPanel.Size = new System.Drawing.Size(270, 574);
             this.SelectPanel.TabIndex = 8;
             // 
+            // textBox4
+            // 
+            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox4.Location = new System.Drawing.Point(170, 398);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(92, 22);
+            this.textBox4.TabIndex = 18;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(145, 398);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 20);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "to";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox6.Location = new System.Drawing.Point(50, 398);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(92, 22);
+            this.textBox6.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(10, 398);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 20);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "from";
+            // 
+            // ApplyButton
+            // 
+            this.ApplyButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ApplyButton.Location = new System.Drawing.Point(12, 517);
+            this.ApplyButton.Name = "ApplyButton";
+            this.ApplyButton.Size = new System.Drawing.Size(75, 44);
+            this.ApplyButton.TabIndex = 14;
+            this.ApplyButton.Text = "Apply";
+            this.ApplyButton.UseVisualStyleBackColor = true;
+            this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
+            // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(60)))), ((int)(((byte)(92)))));
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(10, 337);
+            this.label5.Location = new System.Drawing.Point(10, 338);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(250, 50);
+            this.label5.Size = new System.Drawing.Size(252, 50);
             this.label5.TabIndex = 9;
             this.label5.Text = "Year of publishing";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox3
+            // MaxPriceTextBox
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(170, 307);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(90, 22);
-            this.textBox3.TabIndex = 8;
+            this.MaxPriceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MaxPriceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MaxPriceTextBox.Location = new System.Drawing.Point(170, 308);
+            this.MaxPriceTextBox.Name = "MaxPriceTextBox";
+            this.MaxPriceTextBox.Size = new System.Drawing.Size(92, 22);
+            this.MaxPriceTextBox.TabIndex = 8;
             // 
-            // textBox2
+            // MinPriceTextBox
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(50, 307);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(90, 22);
-            this.textBox2.TabIndex = 7;
+            this.MinPriceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MinPriceTextBox.Location = new System.Drawing.Point(50, 308);
+            this.MinPriceTextBox.Name = "MinPriceTextBox";
+            this.MinPriceTextBox.Size = new System.Drawing.Size(92, 22);
+            this.MinPriceTextBox.TabIndex = 7;
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(145, 307);
+            this.label4.Location = new System.Drawing.Point(145, 308);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 20);
+            this.label4.Size = new System.Drawing.Size(32, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "to";
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(10, 307);
+            this.label3.Location = new System.Drawing.Point(10, 308);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 20);
+            this.label3.Size = new System.Drawing.Size(42, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "from";
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(60)))), ((int)(((byte)(92)))));
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(10, 220);
+            this.label2.Location = new System.Drawing.Point(10, 230);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(250, 50);
             this.label2.TabIndex = 4;
             this.label2.Text = "Price";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // checkedListBox1
+            // TypesListBox
             // 
-            this.checkedListBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TypesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkedListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(60)))), ((int)(((byte)(92)))));
-            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBox1.ForeColor = System.Drawing.Color.White;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.TypesListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(60)))), ((int)(((byte)(92)))));
+            this.TypesListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TypesListBox.ForeColor = System.Drawing.Color.White;
+            this.TypesListBox.FormattingEnabled = true;
+            this.TypesListBox.Items.AddRange(new object[] {
             "Magazines",
             "Books"});
-            this.checkedListBox1.Location = new System.Drawing.Point(10, 69);
-            this.checkedListBox1.MinimumSize = new System.Drawing.Size(250, 40);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(250, 34);
-            this.checkedListBox1.TabIndex = 3;
+            this.TypesListBox.Location = new System.Drawing.Point(10, 70);
+            this.TypesListBox.MinimumSize = new System.Drawing.Size(250, 40);
+            this.TypesListBox.Name = "TypesListBox";
+            this.TypesListBox.Size = new System.Drawing.Size(250, 34);
+            this.TypesListBox.TabIndex = 3;
             // 
             // pictureBox2
             // 
@@ -570,52 +616,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Location = new System.Drawing.Point(7, 444);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 44);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Apply";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(10, 397);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 20);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "from";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Location = new System.Drawing.Point(50, 397);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(90, 22);
-            this.textBox6.TabIndex = 16;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(145, 397);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(30, 20);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "to";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(170, 397);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(90, 22);
-            this.textBox4.TabIndex = 18;
             // 
             // MainForm
             // 
@@ -629,7 +629,6 @@
             this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.SelectPanel);
             this.Controls.Add(this.AddBookButton);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
@@ -639,8 +638,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(1400, 650);
             this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -682,24 +681,23 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn YearOfPublishing;
         private System.Windows.Forms.DataGridViewTextBoxColumn СountOfPages;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button AddMagazineButton;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button AddBookButton;
         private System.Windows.Forms.Label SelectEditionTypeLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox AuothorNameTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel SelectPanel;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox TypesListBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox MaxPriceTextBox;
+        private System.Windows.Forms.TextBox MinPriceTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ApplyButton;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox6;

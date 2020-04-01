@@ -1,17 +1,17 @@
 0	sdasdas	asfsafa	2312	234	213	3	31
-1	Terry Pratchett	Mor	400	1980	180,5	180,5	180,5
+1	Terry Pratchett	Mor	400	1980	180,5	100,5	10,5
 0	Nature Publishing Group	Nature	44	1989	187	12	3
-1	Terry Pratchett	Mor1	450	1985	185,7	185,7	185,7
+1	Terry Pratchett	Mor1	450	1985	185,7	180,7	185,7
+1	dgdf	dfgfdg	231	2000	231	231	231
+1	Terry Pratchett	Mor	400	1980	180,5	10,5	80,5
+0	Nature Publishing Group	Nature	44	1989	187	12	3
+1	Terry Pratchett	Mor1	450	1985	185,7	18,7	85,7
 1	dgdf	dfgfdg	231	2000	231	231	231
 1	Terry Pratchett	Mor	400	1980	180,5	180,5	180,5
 0	Nature Publishing Group	Nature	44	1989	187	12	3
-1	Terry Pratchett	Mor1	450	1985	185,7	185,7	185,7
+1	Terry Pratchett	Mor1	450	1985	185,7	185,7	285,7
 1	dgdf	dfgfdg	231	2000	231	231	231
-1	Terry Pratchett	Mor	400	1980	180,5	180,5	180,5
-0	Nature Publishing Group	Nature	44	1989	187	12	3
-1	Terry Pratchett	Mor1	450	1985	185,7	185,7	185,7
-1	dgdf	dfgfdg	231	2000	231	231	231
-1	Terry Pratchett	Mor	400	1980	180,5	180,5	180,5
+1	Terry Pratchett	Mor	400	1980	180,5	80,5	100,5
 0	Nature Publishing Group	Nature	44	1989	187	12	3
 1	Terry Pratchett	Mor1	450	1985	185,7	185,7	185,7
 1	dgdf	dfgfdg	231	2000	231	231	231
