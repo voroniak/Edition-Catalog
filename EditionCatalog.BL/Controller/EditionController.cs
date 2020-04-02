@@ -131,7 +131,15 @@ namespace EditionCatalog.BL.Controller
             set => _editions[index] = value;
         }
 
-       
+        public double MaxPrice()
+        {
+            return _editions.Max(edition => edition.Price);
+        }
+
+        public int MaxYear()
+        {
+            return _editions.Max(edition => edition.YearOfPublishing);
+        }
     }
     public enum EditionType
     {

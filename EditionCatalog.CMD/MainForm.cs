@@ -22,6 +22,12 @@ namespace EditionCatalog.CMD
         {
             InitializeComponent();
             _fileName = "edition.txt";
+            dataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.DimGray;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Raised;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Raised;
+            dataGridView1.EnableHeadersVisualStyles = false;
         }
         static MainForm()
         {
@@ -124,6 +130,7 @@ namespace EditionCatalog.CMD
             if (EditionController.Count == 0) return;
             var index = dataGridView1.CurrentCell.RowIndex;
             EditionType editionType = EditionType.Book;
+           
             switch (EditionController[index])
             {
                 case Book _:
@@ -137,7 +144,7 @@ namespace EditionCatalog.CMD
                 default:
                     return;
             }
-
+            
             ItemForm itemForm = new ItemForm(editionType, index);
             itemForm.ShowDialog();
             dataGridView1.Rows.Clear();
@@ -210,14 +217,9 @@ namespace EditionCatalog.CMD
             List<string> types = (from object s in TypesListBox.CheckedItems select s.ToString()).ToList();
             var authorName = AuothorNameTextBox.Text;
             double minPrice = 0;
-            double maxPrice = EditionController[0].Price;
-            foreach (Edition edition in EditionController)
-            {
-                if (edition.Price > maxPrice)
-                {
-                    minPrice = edition.Price;
-                }
-            }
+            double maxPrice = EditionController.MaxPrice();
+            int minYear = 0;
+            int maxYear = EditionController.MaxYear();
             if (!string.IsNullOrEmpty(MinPriceTextBox.Text))
             {
                 minPrice = Double.Parse(MinPriceTextBox.Text);
@@ -225,6 +227,14 @@ namespace EditionCatalog.CMD
             if (!string.IsNullOrEmpty(MaxPriceTextBox.Text))
             {
                 maxPrice = Double.Parse(MaxPriceTextBox.Text);
+            }
+            if (!string.IsNullOrEmpty(MaxYearTextBox.Text))
+            {
+                maxYear = Int32.Parse(MaxYearTextBox.Text);
+            }
+            if (!string.IsNullOrEmpty(MinYearTextBox.Text))
+            {
+                minYear = Int32.Parse(MinYearTextBox.Text);
             }
             List<Edition> editions = new List<Edition>();
             switch (types.Count)
@@ -247,8 +257,13 @@ namespace EditionCatalog.CMD
                     editions.AddRange(EditionController.OfType<Edition>());
                     break;
             }
-            editions = editions.Where(edition => edition.Author.Name == authorName).ToList();
+
+            if (!string.IsNullOrEmpty(authorName))
+            {
+                editions = editions.Where(edition => edition.Author.Name == authorName).ToList();
+            }
             editions = editions.Where(edition => edition.Price >= minPrice && edition.Price <= maxPrice).ToList();
+            editions = editions.Where(edition => edition.YearOfPublishing>= minYear && edition.YearOfPublishing <= maxYear).ToList();
             dataGridView1.Rows.Clear();
             foreach (var edition in editions)
             {
@@ -257,5 +272,24 @@ namespace EditionCatalog.CMD
 
         }
 
+        private void ChangeVisibleOfBSortMenuButton_Click(object sender, EventArgs e)
+        {
+            if (SelectPanel.Visible)
+            {
+                SelectPanel.Visible = false;
+                ChangeVisibleOfBSortMenuButton.Text = "Open sorting menu";
+                return;
+            }
+            SelectPanel.Visible = true;
+            ChangeVisibleOfBSortMenuButton.Text = "Close sorting menu";
+        }
+        private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            foreach (DataGridViewRow row  in dataGridView1.Rows)
+            {
+                row.DefaultCellStyle.BackColor = Color.DimGray;
+                row.DefaultCellStyle.ForeColor = Color.White;
+            }
+        }
     }
 }
