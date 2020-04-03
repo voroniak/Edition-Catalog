@@ -17,11 +17,11 @@ namespace EditionCatalog.CMD
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             LoadForm loadForm = new LoadForm();
-           DateTime timeLoad = DateTime.Now + TimeSpan.FromSeconds(8);
+            DateTime timeLoad = DateTime.Now + TimeSpan.FromSeconds(11);
             loadForm.Show();
             //loadForm.Loading(40);
-           // System.Threading.Thread.Sleep(5000);
-           while (timeLoad > DateTime.Now)
+            // System.Threading.Thread.Sleep(5000);
+            while (timeLoad > DateTime.Now)
            {
                Application.DoEvents();
            }

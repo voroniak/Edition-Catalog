@@ -22,8 +22,11 @@ namespace EditionCatalog.CMD
         {
             InitializeComponent();
             _fileName = "edition.txt";
-            dataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.DimGray;
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.DimGray;
+            WindowState = FormWindowState.Maximized;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Bell MT", 12);
+            dataGridView1.DefaultCellStyle.Font = new Font("Bell MTf", 12);
+            dataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(33, 36, 41); 
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(33, 36, 41);
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Raised;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Raised;
@@ -163,7 +166,7 @@ namespace EditionCatalog.CMD
             if (EditionController.Count == 0) return;
             var index = dataGridView1.CurrentCell.RowIndex;
             if (EditionController.Count <= index) return;
-            if (MessageBox.Show("Are you sure ?", "DELETE", MessageBoxButtons.YesNoCancel) == DialogResult.No) return;
+            if (MessageBox.Show("Are you sure ?", "DELETE", MessageBoxButtons.YesNo) == DialogResult.No) return;
             EditionController.RemoveAtIndex(index);
             dataGridView1.Rows.Clear();
             FillInDataGridView();
@@ -287,7 +290,7 @@ namespace EditionCatalog.CMD
         {
             foreach (DataGridViewRow row  in dataGridView1.Rows)
             {
-                row.DefaultCellStyle.BackColor = Color.DimGray;
+                row.DefaultCellStyle.BackColor = Color.FromArgb(33, 36, 41);
                 row.DefaultCellStyle.ForeColor = Color.White;
             }
         }
