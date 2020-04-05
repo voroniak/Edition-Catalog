@@ -294,5 +294,17 @@ namespace EditionCatalog.CMD
                 row.DefaultCellStyle.ForeColor = Color.White;
             }
         }
+
+        private void aboutAuthorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InformationForm informationForm = new InformationForm(InformationType.AboutAuthor);
+            informationForm.Show();
+        }
+
+        private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InformationForm informationForm = new InformationForm(InformationType.ViewHelp);
+            informationForm.Show();
+        }
     }
 }
