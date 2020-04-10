@@ -22,10 +22,15 @@ namespace EditionCatalog.CMD
         {
             InitializeComponent();
             _fileName = "edition.txt";
+           dataGridViewSetting();
+        }
+
+        private void dataGridViewSetting()
+        {
             WindowState = FormWindowState.Maximized;
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Bell MT", 12);
             dataGridView1.DefaultCellStyle.Font = new Font("Bell MTf", 12);
-            dataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(33, 36, 41); 
+            dataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(33, 36, 41);
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(33, 36, 41);
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Raised;
@@ -182,31 +187,6 @@ namespace EditionCatalog.CMD
             EditionController.Clear();
         }
 
-        private void Exit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void AddBookButton_Click(object sender, EventArgs e)
-        {
-            AddNewEdition(EditionType.Book);
-        }
-
-        private void AddMagazineButton_Click(object sender, EventArgs e)
-        {
-            AddNewEdition(EditionType.Magazine);
-        }
-
-        private void DeleteButton_Click(object sender, EventArgs e)
-        {
-            DeleteOption();
-        }
-
-        private void UpdateButton_Click(object sender, EventArgs e)
-        {
-            UpdateOption();
-        }
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             int w = Screen.PrimaryScreen.Bounds.Width;
@@ -214,30 +194,124 @@ namespace EditionCatalog.CMD
             Location = new Point(0,0);
             Size = new Size(w,h);
         }
-
-        private void ApplyButton_Click(object sender, EventArgs e)
+        private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
-            List<string> types = (from object s in TypesListBox.CheckedItems select s.ToString()).ToList();
-            var authorName = AuothorNameTextBox.Text;
+            foreach (DataGridViewRow row  in dataGridView1.Rows)
+            {
+                row.DefaultCellStyle.BackColor = Color.FromArgb(33, 36, 41);
+                row.DefaultCellStyle.ForeColor = Color.White;
+            }
+        }
+
+        private void aboutAuthorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InformationForm informationForm = new InformationForm(InformationType.AboutAuthor);
+            informationForm.Show();
+        }
+
+        private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InformationForm informationForm = new InformationForm(InformationType.ViewHelp);
+            informationForm.Show();
+        }
+
+        private void hideMenu()
+        {
+            if (panelAdd.Visible)
+            {
+                panelAdd.Visible = false;
+            }
+            if (panelUpdate.Visible)
+            {
+                panelUpdate.Visible = false;
+            }
+
+            if (panelSort.Visible)
+            {
+                panelSort.Visible = false;
+            }
+        }
+
+        private void showMenu(Panel panel)
+        {
+            if (!panel.Visible)
+            {
+                hideMenu();
+                panel.Visible = true;
+            }
+            else
+            {
+                panel.Visible = false;
+            }
+        }
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+           showMenu(panelAdd);
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+           UpdateOption();
+        }
+
+        private void buttonSort_Click(object sender, EventArgs e)
+        {
+            showMenu(panelSort);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void buttonAddBook_Click(object sender, EventArgs e)
+        {
+            AddNewEdition(EditionType.Book);
+        }
+
+        private void buttonAddMagazine_Click(object sender, EventArgs e)
+        {
+            AddNewEdition(EditionType.Magazine);
+        }
+
+        private void buttonUpdateBook_Click(object sender, EventArgs e)
+        {
+            UpdateOption();
+        }
+
+        private void buttonUpdateMagazine_Click(object sender, EventArgs e)
+        {
+            UpdateOption();
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            DeleteOption();
+        }
+
+        private void buttonApply_Click(object sender, EventArgs e)
+        {
+            List<string> types = (from object s in checkedListBoxSelectType.CheckedItems select s.ToString()).ToList();
+            var authorName = textBoxAuthorName.Text;
             double minPrice = 0;
             double maxPrice = EditionController.MaxPrice();
             int minYear = 0;
             int maxYear = EditionController.MaxYear();
-            if (!string.IsNullOrEmpty(MinPriceTextBox.Text))
+            if (!string.IsNullOrEmpty(textBoxMinPriceValue.Text))
             {
-                minPrice = Double.Parse(MinPriceTextBox.Text);
+                minPrice = Double.Parse(textBoxMinPriceValue.Text);
             }
-            if (!string.IsNullOrEmpty(MaxPriceTextBox.Text))
+            if (!string.IsNullOrEmpty(textBoxMaxPriceValue.Text))
             {
-                maxPrice = Double.Parse(MaxPriceTextBox.Text);
+                maxPrice = Double.Parse(textBoxMinYearValue.Text);
             }
-            if (!string.IsNullOrEmpty(MaxYearTextBox.Text))
+            if (!string.IsNullOrEmpty(textBoxMaxYearValue.Text))
             {
-                maxYear = Int32.Parse(MaxYearTextBox.Text);
+                maxYear = Int32.Parse(textBoxMaxYearValue.Text);
             }
-            if (!string.IsNullOrEmpty(MinYearTextBox.Text))
+            if (!string.IsNullOrEmpty(textBoxMinYearValue.Text))
             {
-                minYear = Int32.Parse(MinYearTextBox.Text);
+                minYear = Int32.Parse(textBoxMinYearValue.Text);
             }
             List<Edition> editions = new List<Edition>();
             switch (types.Count)
@@ -266,45 +340,13 @@ namespace EditionCatalog.CMD
                 editions = editions.Where(edition => edition.Author.Name == authorName).ToList();
             }
             editions = editions.Where(edition => edition.Price >= minPrice && edition.Price <= maxPrice).ToList();
-            editions = editions.Where(edition => edition.YearOfPublishing>= minYear && edition.YearOfPublishing <= maxYear).ToList();
+            editions = editions.Where(edition => edition.YearOfPublishing >= minYear && edition.YearOfPublishing <= maxYear).ToList();
             dataGridView1.Rows.Clear();
             foreach (var edition in editions)
             {
                 dataGridView1.Rows.Add(edition.ToString().Split('\t'));
             }
 
-        }
-
-        private void ChangeVisibleOfBSortMenuButton_Click(object sender, EventArgs e)
-        {
-            if (SelectPanel.Visible)
-            {
-                SelectPanel.Visible = false;
-                ChangeVisibleOfBSortMenuButton.Text = "Open sorting menu";
-                return;
-            }
-            SelectPanel.Visible = true;
-            ChangeVisibleOfBSortMenuButton.Text = "Close sorting menu";
-        }
-        private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
-        {
-            foreach (DataGridViewRow row  in dataGridView1.Rows)
-            {
-                row.DefaultCellStyle.BackColor = Color.FromArgb(33, 36, 41);
-                row.DefaultCellStyle.ForeColor = Color.White;
-            }
-        }
-
-        private void aboutAuthorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InformationForm informationForm = new InformationForm(InformationType.AboutAuthor);
-            informationForm.Show();
-        }
-
-        private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InformationForm informationForm = new InformationForm(InformationType.ViewHelp);
-            informationForm.Show();
         }
     }
 }
