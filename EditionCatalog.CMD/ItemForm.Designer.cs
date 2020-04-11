@@ -61,6 +61,9 @@
             this.Name = "ItemForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ItemForm";
+          //  this.Load += new System.EventHandler(this.ItemForm_Load);
+          //  this.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            ;
             this.ResumeLayout(false);
 
         }
