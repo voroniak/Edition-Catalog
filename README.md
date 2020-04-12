@@ -10,23 +10,34 @@ Application loading form.
 Description in progress...
 ### Data Grid View 
 Description in progress...
-### Search Filter Bar 
+
+### Menu panel 
+
+#### Add
 Description in progress...
-### Other buttons
+
+#### Update
+
+Description in progress...
+
+#### Delete
+Description in progress...
+
+#### Sort
 Description in progress...
 ## Item form:
-### Adding new Book
+### Add Book
 
 <img src = "EditionCatalog.CMD/imeges/AddBook.PNG" width=500 height=300>
 
 Description in progress...
-### Adding new Magazine
+### Add Magazine
 Description in progress...
-### Updating  Book 
+### Update Book 
 
 <img src = "EditionCatalog.CMD/imeges/UpdateBook.PNG" width=500 height=300>
 
 Description in progress...
-### Updating Magazine
+### Update Magazine
 Description in progress...
 
