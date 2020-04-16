@@ -48,13 +48,14 @@ namespace EditionCatalog.CMD
             FillInTextBoxes(MainForm.EditionController[elementIndex].ToString());
         }
 
-        private static void FillInTextBoxes(string editionData)
+        private  void FillInTextBoxes(string editionData)
         {
             var data = editionData.Split('\t');
-            for (int i = 0; i < _textBoxes.Count; i++)
+            for (int i = 0; i < (_editionType == EditionType.Book ? 6 : 7); i++)
             {
                 _textBoxes[i].Text = data[i];
             }
+            
         }
 
         public void AddTextBoxes(int count)
@@ -113,6 +114,7 @@ namespace EditionCatalog.CMD
                             return;
                         case DialogResult.Yes:
                             MainForm.AddNewRow(_textBoxes.Select(textBox => textBox.Text).ToArray(), _editionType);
+                            _textBoxes.Clear();
                             Close();
                             break;
 
@@ -128,6 +130,7 @@ namespace EditionCatalog.CMD
                             return;
                         case DialogResult.Yes:
                             MainForm.UpdatedEditionData = (GetDataFromTextBoxes().ToList(), _elementIndex);
+                            _textBoxes.Clear();
                             Close();
                             break;
 
@@ -147,7 +150,7 @@ namespace EditionCatalog.CMD
 
         private void textBoxAuthor_TextChanged(object sender, EventArgs e)
         {
-            Validation(_textBoxes[0], "[^A-Z-a-z-А-Я-а-я- ]");
+             Validation(_textBoxes[0], "[^A-Z-a-z-А-Я-а-я- ]");
         }
         private void textBoxEditionName_TextChanged(object sender, EventArgs e)
         {
@@ -164,29 +167,29 @@ namespace EditionCatalog.CMD
         }
         private void textBoxPrice_TextChanged(object sender, EventArgs e)
         {
-            if (Regex.IsMatch(_textBoxes[4].Text, "[^0-9-.]"))
+            if (Regex.IsMatch(_textBoxes[4].Text, "[^0-9-,]"))
             {
-                if (_textBoxes[4].Text[_textBoxes[4].TextLength - 1] != ',')
+                if (_textBoxes[4].Text[_textBoxes[4].TextLength - 1] != '.')
                 {
                     _textBoxes[4].Text = _textBoxes[4].Text.Remove(_textBoxes[4].Text.Length - 1);
                     _textBoxes[4].SelectionStart = _textBoxes[4].TextLength;
                 }
             }
             if (_textBoxes[4].Text.Length == 0) return;
-            if (_textBoxes[4].Text[_textBoxes[4].TextLength - 1] == ',')
+            if (_textBoxes[4].Text[_textBoxes[4].TextLength - 1] == '.')
             {
-                _textBoxes[4].Text = _textBoxes[4].Text.Replace(',', '.');
+                _textBoxes[4].Text = _textBoxes[4].Text.Replace('.', ',');
                 _textBoxes[4].SelectionStart = _textBoxes[4].TextLength;
             }
-            if (_textBoxes[4].Text[_textBoxes[4].TextLength - 1] != '.') return;
-            if (_textBoxes[4].Text.Count(letter => letter == '.') <= 1) return;
+            if (_textBoxes[4].Text[_textBoxes[4].TextLength - 1] != ',') return;
+            if (_textBoxes[4].Text.Count(letter => letter == ',') <= 1) return;
             _textBoxes[4].Text = _textBoxes[4].Text.Remove(_textBoxes[4].Text.Length - 1);
             _textBoxes[4].SelectionStart = _textBoxes[4].TextLength;
 
         }
         private void textBoxGenre_TextChanged(object sender, EventArgs e)
         {
-            Validation(_textBoxes[5], "[^A-Z-a-z-А-Я-а-я- ]");
+           Validation(_textBoxes[5], "[^A-Z-a-z-А-Я-а-я- ]");
         }
         private void textBoxPeriodical_TextChanged(object sender, EventArgs e)
         {
@@ -200,8 +203,11 @@ namespace EditionCatalog.CMD
         {
             if (Regex.IsMatch(textBox.Text, pattern))
             {
-                textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1);
-                textBox.SelectionStart = textBox.TextLength;
+                if (textBox.Text != "i")
+                {
+                    textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1);
+                    textBox.SelectionStart = textBox.TextLength;
+                }
             }
         }
         private  void OnChange()

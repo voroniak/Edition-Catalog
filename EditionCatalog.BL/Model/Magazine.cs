@@ -38,7 +38,7 @@ namespace EditionCatalog.BL.Model
         }
         public override string ToString()
         {
-            return base.ToString() + $"{PeriodicalPerMonth}\t{Number}\t";
+            return base.ToString() + $"{PeriodicalPerMonth}\t{Number}";
         }
     }
 }

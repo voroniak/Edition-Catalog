@@ -31,7 +31,7 @@ namespace EditionCatalog.BL.Model
         }
         public override string ToString()
         {
-            return base.ToString() + $"{Genre}\t";
+            return base.ToString() + $"{Genre}";
         }
     }
 }
