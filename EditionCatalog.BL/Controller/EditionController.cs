@@ -61,7 +61,7 @@ namespace EditionCatalog.BL.Controller
                     break;
                 case Magazine _:
                     ((Magazine) _editions[index]).PeriodicalPerMonth = int.Parse(editionData[5]);
-                    ((Magazine)_editions[index]).Number = int.Parse(editionData[5]);
+                    ((Magazine)_editions[index]).Number = int.Parse(editionData[6]);
                     break;
             }
         }

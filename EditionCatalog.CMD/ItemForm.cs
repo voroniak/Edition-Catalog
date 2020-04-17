@@ -17,13 +17,14 @@ namespace EditionCatalog.CMD
         private readonly List<string> _labelNames = new List<string> { "Author", "Name", "Count of pages", "Year of publishing", "Price" };
         private readonly List<string> _bookLabelNames = new List<string> { "Genre" };
         private readonly List<string> _magazineLabelNames = new List<string> { "Periodical per month", "Number" };
-        private static readonly List<TextBox> _textBoxes = new List<TextBox>();
+        private static List<TextBox> _textBoxes;
         private readonly List<Label> _labels = new List<Label>();
         private readonly EditionType _editionType;
         private readonly SaveButtonType _saveButtonType;
         private readonly int _elementIndex;
         public ItemForm(EditionType editionType)
         {
+            _textBoxes = new List<TextBox>();
             _editionType = editionType;
             _saveButtonType = SaveButtonType.Add;
             InitializeComponent();
@@ -51,7 +52,7 @@ namespace EditionCatalog.CMD
         private  void FillInTextBoxes(string editionData)
         {
             var data = editionData.Split('\t');
-            for (int i = 0; i < (_editionType == EditionType.Book ? 6 : 7); i++)
+            for (int i = 0; i < (_editionType == EditionType.Book? 6:7);i++)
             {
                 _textBoxes[i].Text = data[i];
             }
@@ -114,7 +115,7 @@ namespace EditionCatalog.CMD
                             return;
                         case DialogResult.Yes:
                             MainForm.AddNewRow(_textBoxes.Select(textBox => textBox.Text).ToArray(), _editionType);
-                            _textBoxes.Clear();
+                            _textBoxes = new List<TextBox>();
                             Close();
                             break;
 
@@ -124,13 +125,14 @@ namespace EditionCatalog.CMD
                     switch (MessageBox.Show("Are you sure?", "UPDATE", MessageBoxButtons.YesNoCancel))
                     {
                         case DialogResult.No:
+                             _textBoxes = new List<TextBox>();
                             Close();
                             break;
                         case DialogResult.Cancel:
                             return;
                         case DialogResult.Yes:
                             MainForm.UpdatedEditionData = (GetDataFromTextBoxes().ToList(), _elementIndex);
-                            _textBoxes.Clear();
+                           _textBoxes = new List<TextBox>();
                             Close();
                             break;
 
@@ -150,11 +152,11 @@ namespace EditionCatalog.CMD
 
         private void textBoxAuthor_TextChanged(object sender, EventArgs e)
         {
-             Validation(_textBoxes[0], "[^A-Z-a-z-А-Я-а-я- ]");
+             Validation(_textBoxes[0], "[^A-Za-zа-щА-ЩЬьЮюЯяЇїІіЄєҐґ' ]");
         }
         private void textBoxEditionName_TextChanged(object sender, EventArgs e)
         {
-            Validation(_textBoxes[1], "[^A-Z-a-z-А-Я-а-я- ]");
+            Validation(_textBoxes[1], "[^A-Za-zа-щА-ЩЬьЮюЯяЇїІіЄєҐґ' ]");
 
         }
         private void textBoxCountIfPages_TextChanged(object sender, EventArgs e)
@@ -189,7 +191,7 @@ namespace EditionCatalog.CMD
         }
         private void textBoxGenre_TextChanged(object sender, EventArgs e)
         {
-           Validation(_textBoxes[5], "[^A-Z-a-z-А-Я-а-я- ]");
+           Validation(_textBoxes[5], "[^A-Za-zа-щА-ЩЬьЮюЯяЇїІіЄєҐґ' ]");
         }
         private void textBoxPeriodical_TextChanged(object sender, EventArgs e)
         {
@@ -203,7 +205,7 @@ namespace EditionCatalog.CMD
         {
             if (Regex.IsMatch(textBox.Text, pattern))
             {
-                if (textBox.Text != "i")
+                if (textBox.Text[textBox.TextLength - 1]!= 'i')
                 {
                     textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1);
                     textBox.SelectionStart = textBox.TextLength;
