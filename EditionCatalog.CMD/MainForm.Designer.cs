@@ -28,15 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.FileMenuButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.createNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemMenuButton = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,9 +48,6 @@
             this.СountOfPages = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.YearOfPublishing = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelSort = new System.Windows.Forms.Panel();
             this.buttonApply = new System.Windows.Forms.Button();
@@ -85,17 +76,36 @@
             this.buttonAddBook = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonGraph = new System.Windows.Forms.Button();
+            this.panelGraph = new System.Windows.Forms.Panel();
+            this.buttonDiscount = new System.Windows.Forms.Button();
+            this.buttonGraphEachAuthorBookCount = new System.Windows.Forms.Button();
+            this.buttonGraphPrice = new System.Windows.Forms.Button();
+            this.buttonGraphEditionCount = new System.Windows.Forms.Button();
+            this.buttonGraphYearOfPublishing = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.FileMenuButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.createNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.panelSort.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelPriceSelection.SuspendLayout();
             this.panelAdd.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panelGraph.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -108,70 +118,9 @@
             this.HelpMenuButton});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1482, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1482, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menu";
-            // 
-            // FileMenuButton
-            // 
-            this.FileMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
-            this.FileMenuButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createNewToolStripMenuItem,
-            this.openToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.FileMenuButton.ForeColor = System.Drawing.Color.White;
-            this.FileMenuButton.Image = global::EditionCatalog.CMD.Properties.Resources.Terry;
-            this.FileMenuButton.Name = "FileMenuButton";
-            this.FileMenuButton.Size = new System.Drawing.Size(66, 24);
-            this.FileMenuButton.Text = "File";
-            // 
-            // createNewToolStripMenuItem
-            // 
-            this.createNewToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
-            this.createNewToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
-            this.createNewToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.createNewToolStripMenuItem.Text = "Create new";
-            this.createNewToolStripMenuItem.Click += new System.EventHandler(this.createNewToolStripMenuItem_Click);
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
-            this.openToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.openToolStripMenuItem.Text = "Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
-            this.saveToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
-            this.saveAsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.saveAsToolStripMenuItem.Text = "Save as";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
-            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.exitToolStripMenuItem.Image = global::EditionCatalog.CMD.Properties.Resources.delete;
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // ItemMenuButton
             // 
@@ -267,9 +216,9 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -291,13 +240,13 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.RowHeadersWidth = 30;
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(90)))));
             this.dataGridView1.RowTemplate.Height = 24;
@@ -342,42 +291,6 @@
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox2.Image = global::EditionCatalog.CMD.Properties.Resources.Librarian_300x2821;
-            this.pictureBox2.Location = new System.Drawing.Point(355, 621);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(141, 120);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Image = global::EditionCatalog.CMD.Properties.Resources.MesOK;
-            this.pictureBox3.Location = new System.Drawing.Point(1116, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(160, 150);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::EditionCatalog.CMD.Properties.Resources.terry1;
-            this.pictureBox1.Location = new System.Drawing.Point(1282, 50);
-            this.pictureBox1.MaximumSize = new System.Drawing.Size(500, 500);
-            this.pictureBox1.MinimumSize = new System.Drawing.Size(200, 200);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(90)))));
@@ -389,9 +302,9 @@
             this.panelMenu.Controls.Add(this.panelAdd);
             this.panelMenu.Controls.Add(this.buttonAdd);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(0, 28);
+            this.panelMenu.Location = new System.Drawing.Point(0, 30);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(300, 725);
+            this.panelMenu.Size = new System.Drawing.Size(300, 723);
             this.panelMenu.TabIndex = 10;
             // 
             // panelSort
@@ -446,7 +359,7 @@
             this.textBoxMaxYearValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxMaxYearValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxMaxYearValue.Location = new System.Drawing.Point(194, 16);
+            this.textBoxMaxYearValue.Location = new System.Drawing.Point(200, 16);
             this.textBoxMaxYearValue.Name = "textBoxMaxYearValue";
             this.textBoxMaxYearValue.Size = new System.Drawing.Size(69, 22);
             this.textBoxMaxYearValue.TabIndex = 10;
@@ -459,7 +372,7 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(151, 16);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(28, 25);
+            this.label10.Size = new System.Drawing.Size(35, 25);
             this.label10.TabIndex = 9;
             this.label10.Text = "to";
             // 
@@ -514,7 +427,7 @@
             this.textBoxMaxPriceValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxMaxPriceValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxMaxPriceValue.Location = new System.Drawing.Point(194, 16);
+            this.textBoxMaxPriceValue.Location = new System.Drawing.Point(200, 16);
             this.textBoxMaxPriceValue.Name = "textBoxMaxPriceValue";
             this.textBoxMaxPriceValue.Size = new System.Drawing.Size(69, 22);
             this.textBoxMaxPriceValue.TabIndex = 10;
@@ -527,7 +440,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(151, 16);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(28, 25);
+            this.label9.Size = new System.Drawing.Size(35, 25);
             this.label9.TabIndex = 9;
             this.label9.Text = "to";
             // 
@@ -680,6 +593,7 @@
             this.panelAdd.Name = "panelAdd";
             this.panelAdd.Size = new System.Drawing.Size(300, 82);
             this.panelAdd.TabIndex = 3;
+            this.panelAdd.Visible = false;
             // 
             // buttonAddMagazine
             // 
@@ -732,12 +646,219 @@
             this.panel2.Size = new System.Drawing.Size(765, 379);
             this.panel2.TabIndex = 11;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(90)))));
+            this.panel3.Controls.Add(this.buttonDiscount);
+            this.panel3.Controls.Add(this.panelGraph);
+            this.panel3.Controls.Add(this.buttonGraph);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(300, 603);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1182, 150);
+            this.panel3.TabIndex = 12;
+            // 
+            // buttonGraph
+            // 
+            this.buttonGraph.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonGraph.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGraph.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonGraph.ForeColor = System.Drawing.Color.White;
+            this.buttonGraph.Location = new System.Drawing.Point(0, 0);
+            this.buttonGraph.Name = "buttonGraph";
+            this.buttonGraph.Size = new System.Drawing.Size(250, 150);
+            this.buttonGraph.TabIndex = 7;
+            this.buttonGraph.Text = "Graph";
+            this.buttonGraph.UseVisualStyleBackColor = true;
+            this.buttonGraph.Click += new System.EventHandler(this.buttonGraph_Click);
+            // 
+            // panelGraph
+            // 
+            this.panelGraph.Controls.Add(this.buttonGraphYearOfPublishing);
+            this.panelGraph.Controls.Add(this.buttonGraphEditionCount);
+            this.panelGraph.Controls.Add(this.buttonGraphPrice);
+            this.panelGraph.Controls.Add(this.buttonGraphEachAuthorBookCount);
+            this.panelGraph.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelGraph.Location = new System.Drawing.Point(250, 0);
+            this.panelGraph.Name = "panelGraph";
+            this.panelGraph.Size = new System.Drawing.Size(400, 150);
+            this.panelGraph.TabIndex = 8;
+            this.panelGraph.Visible = false;
+            // 
+            // buttonDiscount
+            // 
+            this.buttonDiscount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDiscount.ForeColor = System.Drawing.Color.White;
+            this.buttonDiscount.Location = new System.Drawing.Point(650, 0);
+            this.buttonDiscount.Name = "buttonDiscount";
+            this.buttonDiscount.Size = new System.Drawing.Size(532, 150);
+            this.buttonDiscount.TabIndex = 9;
+            this.buttonDiscount.Text = "Win the discount";
+            this.buttonDiscount.UseVisualStyleBackColor = true;
+            // 
+            // buttonGraphEachAuthorBookCount
+            // 
+            this.buttonGraphEachAuthorBookCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.buttonGraphEachAuthorBookCount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonGraphEachAuthorBookCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGraphEachAuthorBookCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonGraphEachAuthorBookCount.ForeColor = System.Drawing.Color.White;
+            this.buttonGraphEachAuthorBookCount.Location = new System.Drawing.Point(0, 0);
+            this.buttonGraphEachAuthorBookCount.Name = "buttonGraphEachAuthorBookCount";
+            this.buttonGraphEachAuthorBookCount.Size = new System.Drawing.Size(400, 40);
+            this.buttonGraphEachAuthorBookCount.TabIndex = 4;
+            this.buttonGraphEachAuthorBookCount.Text = "Number of books by each author";
+            this.buttonGraphEachAuthorBookCount.UseVisualStyleBackColor = false;
+            this.buttonGraphEachAuthorBookCount.Click += new System.EventHandler(this.buttonGraphEachAuthorBookCount_Click);
+            // 
+            // buttonGraphPrice
+            // 
+            this.buttonGraphPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.buttonGraphPrice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonGraphPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGraphPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonGraphPrice.ForeColor = System.Drawing.Color.White;
+            this.buttonGraphPrice.Location = new System.Drawing.Point(0, 40);
+            this.buttonGraphPrice.Name = "buttonGraphPrice";
+            this.buttonGraphPrice.Size = new System.Drawing.Size(400, 40);
+            this.buttonGraphPrice.TabIndex = 5;
+            this.buttonGraphPrice.Text = "Books price";
+            this.buttonGraphPrice.UseVisualStyleBackColor = false;
+            // 
+            // buttonGraphEditionCount
+            // 
+            this.buttonGraphEditionCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.buttonGraphEditionCount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonGraphEditionCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGraphEditionCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonGraphEditionCount.ForeColor = System.Drawing.Color.White;
+            this.buttonGraphEditionCount.Location = new System.Drawing.Point(0, 80);
+            this.buttonGraphEditionCount.Name = "buttonGraphEditionCount";
+            this.buttonGraphEditionCount.Size = new System.Drawing.Size(400, 40);
+            this.buttonGraphEditionCount.TabIndex = 6;
+            this.buttonGraphEditionCount.Text = "The number of books and magazines";
+            this.buttonGraphEditionCount.UseVisualStyleBackColor = false;
+            // 
+            // buttonGraphYearOfPublishing
+            // 
+            this.buttonGraphYearOfPublishing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.buttonGraphYearOfPublishing.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonGraphYearOfPublishing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGraphYearOfPublishing.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonGraphYearOfPublishing.ForeColor = System.Drawing.Color.White;
+            this.buttonGraphYearOfPublishing.Location = new System.Drawing.Point(0, 120);
+            this.buttonGraphYearOfPublishing.Name = "buttonGraphYearOfPublishing";
+            this.buttonGraphYearOfPublishing.Size = new System.Drawing.Size(400, 40);
+            this.buttonGraphYearOfPublishing.TabIndex = 7;
+            this.buttonGraphYearOfPublishing.Text = "Year of publishing";
+            this.buttonGraphYearOfPublishing.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::EditionCatalog.CMD.Properties.Resources.Librarian_300x2821;
+            this.pictureBox2.Location = new System.Drawing.Point(1329, 470);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(141, 120);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Image = global::EditionCatalog.CMD.Properties.Resources.MesOK;
+            this.pictureBox3.Location = new System.Drawing.Point(1116, 12);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(160, 150);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 6;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = global::EditionCatalog.CMD.Properties.Resources.terry1;
+            this.pictureBox1.Location = new System.Drawing.Point(1282, 50);
+            this.pictureBox1.MaximumSize = new System.Drawing.Size(500, 500);
+            this.pictureBox1.MinimumSize = new System.Drawing.Size(200, 200);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // FileMenuButton
+            // 
+            this.FileMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.FileMenuButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createNewToolStripMenuItem,
+            this.openToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.saveAsToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.FileMenuButton.ForeColor = System.Drawing.Color.White;
+            this.FileMenuButton.Image = global::EditionCatalog.CMD.Properties.Resources.Terry;
+            this.FileMenuButton.Name = "FileMenuButton";
+            this.FileMenuButton.Size = new System.Drawing.Size(66, 24);
+            this.FileMenuButton.Text = "File";
+            // 
+            // createNewToolStripMenuItem
+            // 
+            this.createNewToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.createNewToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
+            this.createNewToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.createNewToolStripMenuItem.Text = "Create new";
+            this.createNewToolStripMenuItem.Click += new System.EventHandler(this.createNewToolStripMenuItem_Click);
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.openToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.saveToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.saveAsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.saveAsToolStripMenuItem.Text = "Save as";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.exitToolStripMenuItem.Image = global::EditionCatalog.CMD.Properties.Resources.delete;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(1482, 753);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.pictureBox2);
@@ -754,9 +875,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.panelSort.ResumeLayout(false);
             this.panelSort.PerformLayout();
@@ -766,6 +884,11 @@
             this.panelPriceSelection.PerformLayout();
             this.panelAdd.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panelGraph.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -828,6 +951,14 @@
         private System.Windows.Forms.Button buttonPrice;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonApply;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button buttonDiscount;
+        private System.Windows.Forms.Panel panelGraph;
+        private System.Windows.Forms.Button buttonGraphYearOfPublishing;
+        private System.Windows.Forms.Button buttonGraphEditionCount;
+        private System.Windows.Forms.Button buttonGraphPrice;
+        private System.Windows.Forms.Button buttonGraphEachAuthorBookCount;
+        private System.Windows.Forms.Button buttonGraph;
     }
 }
 

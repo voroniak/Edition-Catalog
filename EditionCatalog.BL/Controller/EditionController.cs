@@ -13,17 +13,13 @@ namespace EditionCatalog.BL.Controller
     {
         private List<Edition> _editions;
         public int Count => _editions.Count;
+        public double MaxPrice => _editions.Max(edition => edition.Price);
+        public int MaxYear => _editions.Max(edition => edition.YearOfPublishing);
 
         public EditionController()
         {
             _editions = new List<Edition>();
         }
-
-        public void AddEdition(Edition edition)
-        {
-
-        }
-
         public void AddBook(string authorName,
                             string name,
                             int countOfPages,
@@ -71,10 +67,8 @@ namespace EditionCatalog.BL.Controller
             {
                 throw new IndexOutOfRangeException();
             }
-
             return _editions[_editions.Count - 1];
         }
-
         public void RemoveAtIndex(int index)
         {
             if(index < 0)return;
@@ -131,15 +125,6 @@ namespace EditionCatalog.BL.Controller
             set => _editions[index] = value;
         }
 
-        public double MaxPrice()
-        {
-            return _editions.Max(edition => edition.Price);
-        }
-
-        public int MaxYear()
-        {
-            return _editions.Max(edition => edition.YearOfPublishing);
-        }
     }
     public enum EditionType
     {

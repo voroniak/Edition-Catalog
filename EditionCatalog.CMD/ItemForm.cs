@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using EditionCatalog.BL.Controller;
 
@@ -144,28 +140,9 @@ namespace EditionCatalog.CMD
                     throw new ArgumentOutOfRangeException();
             }
         }
-
         private static string[] GetDataFromTextBoxes()
         {
             return _textBoxes.Select(textBox => textBox.Text).ToArray();
-        }
-
-        private void textBoxAuthor_TextChanged(object sender, EventArgs e)
-        {
-             Validation(_textBoxes[0], "[^A-Za-zа-щА-ЩЬьЮюЯяЇїІіЄєҐґ' ]");
-        }
-        private void textBoxEditionName_TextChanged(object sender, EventArgs e)
-        {
-            Validation(_textBoxes[1], "[^A-Za-zа-щА-ЩЬьЮюЯяЇїІіЄєҐґ' ]");
-
-        }
-        private void textBoxCountIfPages_TextChanged(object sender, EventArgs e)
-        {
-            Validation(_textBoxes[2], "[^0-9]");
-        }
-        private void textBoxYearOfPublishing_TextChanged(object sender, EventArgs e)
-        {
-            Validation(_textBoxes[3], "[^0-9]");
         }
         private void textBoxPrice_TextChanged(object sender, EventArgs e)
         {
@@ -189,45 +166,30 @@ namespace EditionCatalog.CMD
             _textBoxes[4].SelectionStart = _textBoxes[4].TextLength;
 
         }
-        private void textBoxGenre_TextChanged(object sender, EventArgs e)
-        {
-           Validation(_textBoxes[5], "[^A-Za-zа-щА-ЩЬьЮюЯяЇїІіЄєҐґ' ]");
-        }
-        private void textBoxPeriodical_TextChanged(object sender, EventArgs e)
-        {
-            Validation(_textBoxes[5], "[^0-9]");
-        }
-        private void textBoxNumber_TextChanged(object sender, EventArgs e)
-        {
-            Validation(_textBoxes[6], "[^0-9]");
-        }
         private  void Validation(TextBox textBox, string pattern)
         {
-            if (Regex.IsMatch(textBox.Text, pattern))
-            {
-                if (textBox.Text[textBox.TextLength - 1]!= 'i')
-                {
-                    textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1);
-                    textBox.SelectionStart = textBox.TextLength;
-                }
-            }
+            if (!Regex.IsMatch(textBox.Text, pattern)) return;
+            if (textBox.Text[textBox.TextLength - 1] == 'i') return;
+            textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1);
+            textBox.SelectionStart = textBox.TextLength;
         }
         private  void OnChange()
         {
-         _textBoxes[0].TextChanged += new EventHandler(textBoxAuthor_TextChanged);
-         _textBoxes[1].TextChanged += new EventHandler(textBoxEditionName_TextChanged);
-         _textBoxes[2].TextChanged += new EventHandler(textBoxCountIfPages_TextChanged);
-         _textBoxes[3].TextChanged += new EventHandler(textBoxYearOfPublishing_TextChanged);
-         _textBoxes[4].TextChanged += new EventHandler(textBoxPrice_TextChanged);
+         _textBoxes[0].TextChanged += (s,e) => Validation(_textBoxes[0], "[^A-Za-zа-щА-ЩЬьЮюЯяЇїІіЄєҐґ' ]");
+         _textBoxes[1].TextChanged += (s, e) => Validation(_textBoxes[1], "[^A-Za-zа-щА-ЩЬьЮюЯяЇїІіЄєҐґ' ]");
+         _textBoxes[2].TextChanged += (s, e) => Validation(_textBoxes[2], "[^0-9]");
+         _textBoxes[3].TextChanged += (s, e) => Validation(_textBoxes[3], "[^0-9]");
+         _textBoxes[4].TextChanged += textBoxPrice_TextChanged;
+         
          switch (_editionType)
          {
              case EditionType.Book:
-                 _textBoxes[5].TextChanged += new EventHandler(textBoxGenre_TextChanged);
+                 _textBoxes[5].TextChanged += (s, e) => Validation(_textBoxes[5], "[^A-Za-zа-щА-ЩЬьЮюЯяЇїІіЄєҐґ' ]");
                     break;
              case EditionType.Magazine:
-                 _textBoxes[5].TextChanged += new EventHandler(textBoxPeriodical_TextChanged);
-                 _textBoxes[6].TextChanged += new EventHandler(textBoxNumber_TextChanged);
-                 break;
+                 _textBoxes[5].TextChanged += (s, e) => Validation(_textBoxes[5], "[^0-9]");
+                 _textBoxes[6].TextChanged += (s, e) => Validation(_textBoxes[6], "[^0-9]");
+                    break;
          }
         }
         private enum SaveButtonType
