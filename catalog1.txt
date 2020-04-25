@@ -1,4 +1,6 @@
-1	Terry Pratchett	Mor	400	1980	180,5878787	Fantasy
-0	Nature Publishing Group	Nature	44	1989	187,234324	12	12
-1	Terry Pratchett	Mor	450	1985	185,732	Fantasy
-1	Нілл Гейман	Американські боги	2000	2010	99,33	триллер
+1	Terry Pratchett	Mor	400	1980	180,5	Fantas
+0	Nature Publishing Group	Nature	44	1989	187,2	12	1
+1	Terry Pratchett	The Truth	450	2000	180	Fantas
+1	Neil  Gaiman	American Gods	696	2001	290	Science fictio
+1	Yuval Noah Harari	Sapiens	543	2011	139	Non fictio
+1	Stephen King	It	1340	1986	250	Horro
