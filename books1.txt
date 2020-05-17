@@ -1,0 +1,5 @@
+1	Terry Pratchett	Mor	400	1980	109,6	Fantasy
+1	Terry Pratchett	The Truth	450	2000	109,3	Fantasy
+1	Neil  Gaiman	American Gods	696	2001	176,09	Science fiction
+1	Stephen King	It	1340	1986	151,8	Horror
+0	Nature Publishing Group	Nature	44	1989	172,26	12	12

@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using EditionCatalog.BL.Controller;
+using EditionCatalog.BL.Model;
 
 namespace EditionCatalog.CMD
 {
@@ -42,7 +42,7 @@ namespace EditionCatalog.CMD
         {
             _saveButtonType = SaveButtonType.Update;
             _elementIndex = elementIndex;
-            FillInTextBoxes(MainForm.EditionController[elementIndex].ToString());
+            FillInTextBoxes(MainForm.BookShelf[elementIndex].ToString());
         }
 
         private  void FillInTextBoxes(string editionData)
@@ -192,12 +192,7 @@ namespace EditionCatalog.CMD
                     break;
          }
         }
-        private enum SaveButtonType
-        {
-            Add,
-            Update,
-            Delete
-        }
+       
 
     }
 

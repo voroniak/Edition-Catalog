@@ -28,9 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.FileMenuButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.createNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemMenuButton = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,22 +83,17 @@
             this.buttonAdd = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.buttonGraph = new System.Windows.Forms.Button();
-            this.panelGraph = new System.Windows.Forms.Panel();
             this.buttonDiscount = new System.Windows.Forms.Button();
-            this.buttonGraphEachAuthorBookCount = new System.Windows.Forms.Button();
-            this.buttonGraphPrice = new System.Windows.Forms.Button();
-            this.buttonGraphEditionCount = new System.Windows.Forms.Button();
+            this.panelGraph = new System.Windows.Forms.Panel();
             this.buttonGraphYearOfPublishing = new System.Windows.Forms.Button();
+            this.buttonGraphEditionCount = new System.Windows.Forms.Button();
+            this.buttonGraphPrice = new System.Windows.Forms.Button();
+            this.buttonGraphEachAuthorBookCount = new System.Windows.Forms.Button();
+            this.buttonGraph = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.FileMenuButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.createNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -118,9 +119,70 @@
             this.HelpMenuButton});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1482, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1482, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menu";
+            // 
+            // FileMenuButton
+            // 
+            this.FileMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.FileMenuButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createNewToolStripMenuItem,
+            this.openToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.saveAsToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.FileMenuButton.ForeColor = System.Drawing.Color.White;
+            this.FileMenuButton.Image = global::EditionCatalog.CMD.Properties.Resources.Terry;
+            this.FileMenuButton.Name = "FileMenuButton";
+            this.FileMenuButton.Size = new System.Drawing.Size(66, 24);
+            this.FileMenuButton.Text = "File";
+            // 
+            // createNewToolStripMenuItem
+            // 
+            this.createNewToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.createNewToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
+            this.createNewToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.createNewToolStripMenuItem.Text = "Create new";
+            this.createNewToolStripMenuItem.Click += new System.EventHandler(this.createNewToolStripMenuItem_Click);
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.openToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.saveToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.saveAsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.saveAsToolStripMenuItem.Text = "Save as";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.exitToolStripMenuItem.Image = global::EditionCatalog.CMD.Properties.Resources.delete;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // ItemMenuButton
             // 
@@ -216,9 +278,9 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -240,13 +302,13 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowHeadersWidth = 30;
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(90)))));
             this.dataGridView1.RowTemplate.Height = 24;
@@ -302,14 +364,15 @@
             this.panelMenu.Controls.Add(this.panelAdd);
             this.panelMenu.Controls.Add(this.buttonAdd);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(0, 30);
+            this.panelMenu.Location = new System.Drawing.Point(0, 28);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(300, 723);
+            this.panelMenu.Size = new System.Drawing.Size(300, 725);
             this.panelMenu.TabIndex = 10;
             // 
             // panelSort
             // 
             this.panelSort.AutoScroll = true;
+            this.panelSort.Controls.Add(this.buttonSave);
             this.panelSort.Controls.Add(this.buttonApply);
             this.panelSort.Controls.Add(this.panel1);
             this.panelSort.Controls.Add(this.buttonYearOfPublishing);
@@ -658,19 +721,19 @@
             this.panel3.Size = new System.Drawing.Size(1182, 150);
             this.panel3.TabIndex = 12;
             // 
-            // buttonGraph
+            // buttonDiscount
             // 
-            this.buttonGraph.Dock = System.Windows.Forms.DockStyle.Left;
-            this.buttonGraph.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGraph.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonGraph.ForeColor = System.Drawing.Color.White;
-            this.buttonGraph.Location = new System.Drawing.Point(0, 0);
-            this.buttonGraph.Name = "buttonGraph";
-            this.buttonGraph.Size = new System.Drawing.Size(250, 150);
-            this.buttonGraph.TabIndex = 7;
-            this.buttonGraph.Text = "Graph";
-            this.buttonGraph.UseVisualStyleBackColor = true;
-            this.buttonGraph.Click += new System.EventHandler(this.buttonGraph_Click);
+            this.buttonDiscount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDiscount.ForeColor = System.Drawing.Color.White;
+            this.buttonDiscount.Location = new System.Drawing.Point(650, 0);
+            this.buttonDiscount.Name = "buttonDiscount";
+            this.buttonDiscount.Size = new System.Drawing.Size(532, 150);
+            this.buttonDiscount.TabIndex = 9;
+            this.buttonDiscount.Text = "Win the discount";
+            this.buttonDiscount.UseVisualStyleBackColor = true;
+            this.buttonDiscount.Click += new System.EventHandler(this.buttonDiscount_Click);
             // 
             // panelGraph
             // 
@@ -685,18 +748,47 @@
             this.panelGraph.TabIndex = 8;
             this.panelGraph.Visible = false;
             // 
-            // buttonDiscount
+            // buttonGraphYearOfPublishing
             // 
-            this.buttonDiscount.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDiscount.ForeColor = System.Drawing.Color.White;
-            this.buttonDiscount.Location = new System.Drawing.Point(650, 0);
-            this.buttonDiscount.Name = "buttonDiscount";
-            this.buttonDiscount.Size = new System.Drawing.Size(532, 150);
-            this.buttonDiscount.TabIndex = 9;
-            this.buttonDiscount.Text = "Win the discount";
-            this.buttonDiscount.UseVisualStyleBackColor = true;
+            this.buttonGraphYearOfPublishing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.buttonGraphYearOfPublishing.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonGraphYearOfPublishing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGraphYearOfPublishing.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonGraphYearOfPublishing.ForeColor = System.Drawing.Color.White;
+            this.buttonGraphYearOfPublishing.Location = new System.Drawing.Point(0, 120);
+            this.buttonGraphYearOfPublishing.Name = "buttonGraphYearOfPublishing";
+            this.buttonGraphYearOfPublishing.Size = new System.Drawing.Size(400, 40);
+            this.buttonGraphYearOfPublishing.TabIndex = 7;
+            this.buttonGraphYearOfPublishing.Text = "Year of publishing";
+            this.buttonGraphYearOfPublishing.UseVisualStyleBackColor = false;
+            // 
+            // buttonGraphEditionCount
+            // 
+            this.buttonGraphEditionCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.buttonGraphEditionCount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonGraphEditionCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGraphEditionCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonGraphEditionCount.ForeColor = System.Drawing.Color.White;
+            this.buttonGraphEditionCount.Location = new System.Drawing.Point(0, 80);
+            this.buttonGraphEditionCount.Name = "buttonGraphEditionCount";
+            this.buttonGraphEditionCount.Size = new System.Drawing.Size(400, 40);
+            this.buttonGraphEditionCount.TabIndex = 6;
+            this.buttonGraphEditionCount.Text = "The number of books and magazines";
+            this.buttonGraphEditionCount.UseVisualStyleBackColor = false;
+            // 
+            // buttonGraphPrice
+            // 
+            this.buttonGraphPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.buttonGraphPrice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonGraphPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGraphPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonGraphPrice.ForeColor = System.Drawing.Color.White;
+            this.buttonGraphPrice.Location = new System.Drawing.Point(0, 40);
+            this.buttonGraphPrice.Name = "buttonGraphPrice";
+            this.buttonGraphPrice.Size = new System.Drawing.Size(400, 40);
+            this.buttonGraphPrice.TabIndex = 5;
+            this.buttonGraphPrice.Text = "Books price";
+            this.buttonGraphPrice.UseVisualStyleBackColor = false;
             // 
             // buttonGraphEachAuthorBookCount
             // 
@@ -713,47 +805,19 @@
             this.buttonGraphEachAuthorBookCount.UseVisualStyleBackColor = false;
             this.buttonGraphEachAuthorBookCount.Click += new System.EventHandler(this.buttonGraphEachAuthorBookCount_Click);
             // 
-            // buttonGraphPrice
+            // buttonGraph
             // 
-            this.buttonGraphPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.buttonGraphPrice.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonGraphPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGraphPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonGraphPrice.ForeColor = System.Drawing.Color.White;
-            this.buttonGraphPrice.Location = new System.Drawing.Point(0, 40);
-            this.buttonGraphPrice.Name = "buttonGraphPrice";
-            this.buttonGraphPrice.Size = new System.Drawing.Size(400, 40);
-            this.buttonGraphPrice.TabIndex = 5;
-            this.buttonGraphPrice.Text = "Books price";
-            this.buttonGraphPrice.UseVisualStyleBackColor = false;
-            // 
-            // buttonGraphEditionCount
-            // 
-            this.buttonGraphEditionCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.buttonGraphEditionCount.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonGraphEditionCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGraphEditionCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonGraphEditionCount.ForeColor = System.Drawing.Color.White;
-            this.buttonGraphEditionCount.Location = new System.Drawing.Point(0, 80);
-            this.buttonGraphEditionCount.Name = "buttonGraphEditionCount";
-            this.buttonGraphEditionCount.Size = new System.Drawing.Size(400, 40);
-            this.buttonGraphEditionCount.TabIndex = 6;
-            this.buttonGraphEditionCount.Text = "The number of books and magazines";
-            this.buttonGraphEditionCount.UseVisualStyleBackColor = false;
-            // 
-            // buttonGraphYearOfPublishing
-            // 
-            this.buttonGraphYearOfPublishing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.buttonGraphYearOfPublishing.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonGraphYearOfPublishing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGraphYearOfPublishing.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonGraphYearOfPublishing.ForeColor = System.Drawing.Color.White;
-            this.buttonGraphYearOfPublishing.Location = new System.Drawing.Point(0, 120);
-            this.buttonGraphYearOfPublishing.Name = "buttonGraphYearOfPublishing";
-            this.buttonGraphYearOfPublishing.Size = new System.Drawing.Size(400, 40);
-            this.buttonGraphYearOfPublishing.TabIndex = 7;
-            this.buttonGraphYearOfPublishing.Text = "Year of publishing";
-            this.buttonGraphYearOfPublishing.UseVisualStyleBackColor = false;
+            this.buttonGraph.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonGraph.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGraph.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonGraph.ForeColor = System.Drawing.Color.White;
+            this.buttonGraph.Location = new System.Drawing.Point(0, 0);
+            this.buttonGraph.Name = "buttonGraph";
+            this.buttonGraph.Size = new System.Drawing.Size(250, 150);
+            this.buttonGraph.TabIndex = 7;
+            this.buttonGraph.Text = "Graph";
+            this.buttonGraph.UseVisualStyleBackColor = true;
+            this.buttonGraph.Click += new System.EventHandler(this.buttonGraph_Click);
             // 
             // pictureBox2
             // 
@@ -791,66 +855,21 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // FileMenuButton
+            // buttonSave
             // 
-            this.FileMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
-            this.FileMenuButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createNewToolStripMenuItem,
-            this.openToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.FileMenuButton.ForeColor = System.Drawing.Color.White;
-            this.FileMenuButton.Image = global::EditionCatalog.CMD.Properties.Resources.Terry;
-            this.FileMenuButton.Name = "FileMenuButton";
-            this.FileMenuButton.Size = new System.Drawing.Size(66, 24);
-            this.FileMenuButton.Text = "File";
-            // 
-            // createNewToolStripMenuItem
-            // 
-            this.createNewToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
-            this.createNewToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
-            this.createNewToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
-            this.createNewToolStripMenuItem.Text = "Create new";
-            this.createNewToolStripMenuItem.Click += new System.EventHandler(this.createNewToolStripMenuItem_Click);
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
-            this.openToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
-            this.openToolStripMenuItem.Text = "Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
-            this.saveToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
-            this.saveAsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
-            this.saveAsToolStripMenuItem.Text = "Save as";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
-            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.exitToolStripMenuItem.Image = global::EditionCatalog.CMD.Properties.Resources.delete;
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(90)))));
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.Font = new System.Drawing.Font("Bell MT", 12F);
+            this.buttonSave.ForeColor = System.Drawing.Color.White;
+            this.buttonSave.Location = new System.Drawing.Point(155, 352);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(95, 44);
+            this.buttonSave.TabIndex = 16;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // MainForm
             // 
@@ -959,6 +978,7 @@
         private System.Windows.Forms.Button buttonGraphPrice;
         private System.Windows.Forms.Button buttonGraphEachAuthorBookCount;
         private System.Windows.Forms.Button buttonGraph;
+        private System.Windows.Forms.Button buttonSave;
     }
 }
 

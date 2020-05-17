@@ -1,22 +1,28 @@
-﻿using EditionCatalog.BL.Controller;
-using EditionCatalog.BL.Model;
+﻿using EditionCatalog.BL.Model;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 namespace EditionCatalog.CMD
 {
     public partial class MainForm : Form
     {
-        public static EditionController EditionController { get; }
+        public static BookShelf BookShelf { get; }
         public static (List<string>, int) UpdatedEditionData;
+        private List<Edition> _sortedEditions;
         private string _fileName;
+        private bool _isApplied;
+        private bool _isCreateNew;
         public MainForm()
         {
             InitializeComponent();
             _fileName = "edition.txt";
-           dataGridViewSetting();
+            _isApplied = false;
+            _sortedEditions = new List<Edition>();
+            dataGridViewSetting();
+            _isCreateNew = false;
         }
         private void dataGridViewSetting()
         {
@@ -32,22 +38,23 @@ namespace EditionCatalog.CMD
         }
         static MainForm()
         {
-            EditionController = new EditionController();
+            BookShelf = new BookShelf();
             UpdatedEditionData = (new List<string>(),0);
         }
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditionController.Clear();
+            BookShelf.Clear();
             dataGridView1.Rows.Clear();
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel) return; 
             _fileName = openFileDialog1.FileName; 
             string fileText = System.IO.File.ReadAllText(_fileName);
-            EditionController.Load(fileText);
+            BookShelf.Load(fileText);
             FillInDataGridView();
+            _isApplied = false;
         }
         private void FillInDataGridView()
         {
-            foreach (var edition in EditionController)
+            foreach (var edition in BookShelf)
             {
                 dataGridView1.Rows.Add(edition.ToString().Split('\t'));
             }
@@ -57,7 +64,7 @@ namespace EditionCatalog.CMD
             switch (editionType)
             {
                 case EditionType.Book:
-                    EditionController.AddBook(editionData[0],
+                    BookShelf.AddBook(editionData[0],
                         editionData[1],
                         int.Parse(editionData[2]),
                         int.Parse(editionData[3]),
@@ -65,7 +72,7 @@ namespace EditionCatalog.CMD
                         editionData[5]); 
                     break;
                 case EditionType.Magazine:
-                    EditionController.AddMagazine(editionData[0],
+                    BookShelf.AddMagazine(editionData[0],
                         editionData[1],
                         int.Parse(editionData[2]),
                         int.Parse(editionData[3]),
@@ -85,35 +92,56 @@ namespace EditionCatalog.CMD
         }
         private void AddNewEdition(EditionType editionType)
         {
-            int countBefore = EditionController.Count;
+            int countBefore = BookShelf.Count;
             ItemForm itemForm = new ItemForm(editionType);
             itemForm.ShowDialog();
-            if (countBefore != EditionController.Count)
+            if (countBefore != BookShelf.Count)
             {
-                dataGridView1.Rows.Add(EditionController.Last().ToString().Split('\t'));
+                dataGridView1.Rows.Add(BookShelf.Last().ToString().Split('\t'));
             }
         }
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            System.IO.File.WriteAllText(_fileName, SaveToTxt());
+                MessageBox.Show("Saved");
+        }
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
+            saveFileDialog1.RestoreDirectory = true;
+            saveFileDialog1.FileName = " *.txt";
+            saveFileDialog1.Filter = "txt file(*.txt)|*.txt";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Stream fileStream = saveFileDialog1.OpenFile();
+                using (StreamWriter sw = new StreamWriter(fileStream))
+                {
+                    sw.Write(SaveToTxt());
+                }
+                MessageBox.Show("Saved");
+            }
+        }
+        private string SaveToTxt()
+        {
             string resultText = string.Empty;
-            foreach(var edition in EditionController)
+            foreach (var edition in BookShelf)
             {
                 switch (edition)
                 {
                     case Book _:
                         resultText += "1\t";
                         resultText += edition.ToString();
-                        resultText = resultText.Substring(0, resultText.Length-1) + "\n";
+                        resultText = resultText.Substring(0, resultText.Length) + "\n";
                         break;
                     case Magazine _:
                         resultText += "0\t";
                         resultText += edition.ToString();
-                        resultText =resultText.Substring(0, resultText.Length-1) +"\n";
+                        resultText = resultText.Substring(0, resultText.Length) + "\n";
                         break;
                 }
             }
-            System.IO.File.WriteAllText(_fileName, resultText);
-            MessageBox.Show("Saved");
+            return resultText;
         }
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -121,18 +149,18 @@ namespace EditionCatalog.CMD
         }
         private void UpdateOption()
         {
-            if (EditionController.Count == 0) return;
+            if (BookShelf.Count == 0) return;
             var index = dataGridView1.CurrentCell.RowIndex;
             EditionType editionType = EditionType.Book;
            
-            switch (EditionController[index])
+            switch (BookShelf[index])
             {
                 case Book _:
-                    UpdatedEditionData = (((Book)EditionController[index]).ToString().Split('\t').ToList(), index);
+                    UpdatedEditionData = (((Book)BookShelf[index]).ToString().Split('\t').ToList(), index);
                     editionType = EditionType.Book;
                     break;
                 case Magazine _:
-                    UpdatedEditionData = (((Magazine)EditionController[index]).ToString().Split('\t').ToList(), index);
+                    UpdatedEditionData = (((Magazine)BookShelf[index]).ToString().Split('\t').ToList(), index);
                     editionType = EditionType.Magazine;
                     break;
                 default:
@@ -141,7 +169,7 @@ namespace EditionCatalog.CMD
             ItemForm itemForm = new ItemForm(editionType, index);
             itemForm.ShowDialog();
             dataGridView1.Rows.Clear();
-            EditionController.UpdateEdition(UpdatedEditionData.Item1.ToArray(), UpdatedEditionData.Item2);
+            BookShelf.UpdateEdition(UpdatedEditionData.Item1.ToArray(), UpdatedEditionData.Item2);
             FillInDataGridView();
         }
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -151,11 +179,11 @@ namespace EditionCatalog.CMD
         private void DeleteOption()
         {
             if(dataGridView1.Rows.Count == 0)return;
-            if (EditionController.Count == 0) return;
+            if (BookShelf.Count == 0) return;
             var index = dataGridView1.CurrentCell.RowIndex;
-            if (EditionController.Count <= index) return;
+            if (BookShelf.Count <= index) return;
             if (MessageBox.Show("Are you sure ?", "DELETE", MessageBoxButtons.YesNo) == DialogResult.No) return;
-            EditionController.RemoveAtIndex(index);
+            BookShelf.RemoveAtIndex(index);
             dataGridView1.Rows.Clear();
             FillInDataGridView();
         }
@@ -166,7 +194,9 @@ namespace EditionCatalog.CMD
         private void createNewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
-            EditionController.Clear();
+            BookShelf.Clear();
+            //_fileName = $"text_{DateTime.Now.ToString()}.txt";
+            _isCreateNew = true;
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -251,12 +281,14 @@ namespace EditionCatalog.CMD
         private void buttonApply_Click(object sender, EventArgs e)
         {
             if(dataGridView1.Rows.Count == 0)return;
+            _isApplied = true;
+            _sortedEditions = new List<Edition>();
             List<string> types = (from object s in checkedListBoxSelectType.CheckedItems select s.ToString()).ToList();
             var authorName = textBoxAuthorName.Text;
             double minPrice = 0;
-            double maxPrice = EditionController.MaxPrice;
+            double maxPrice = BookShelf.MaxPrice;
             int minYear = 0;
-            int maxYear = EditionController.MaxYear;
+            int maxYear = BookShelf.MaxYear;
             if (!string.IsNullOrEmpty(textBoxMinPriceValue.Text))
             {
                 minPrice = double.Parse(textBoxMinPriceValue.Text);
@@ -272,34 +304,33 @@ namespace EditionCatalog.CMD
             if (!string.IsNullOrEmpty(textBoxMinYearValue.Text))
             {
                 minYear = int.Parse(textBoxMinYearValue.Text);
-            }   
-            List<Edition> editions = new List<Edition>();
+            }
             switch (types.Count)
             {
                 case 1:
                     switch (types[0])
                     {
                         case "Magazines":
-                            editions.AddRange(EditionController.OfType<Magazine>());
+                            _sortedEditions.AddRange(BookShelf.OfType<Magazine>());
                             break;
                         case "Books":
-                            editions.AddRange(EditionController.OfType<Book>());
+                            _sortedEditions.AddRange(BookShelf.OfType<Book>());
                             break;
                     }
                     break;
                 case 2:
-                    editions.AddRange(EditionController.OfType<Edition>());
+                    _sortedEditions.AddRange(BookShelf.OfType<Edition>());
                     break;
                 case 0:
-                    editions.AddRange(EditionController.OfType<Edition>());
+                    _sortedEditions.AddRange(BookShelf.OfType<Edition>());
                     break;
             }
             if (!string.IsNullOrEmpty(authorName))
             {
-                editions = editions.Where(edition => edition.Author.Name == authorName).ToList();
+                _sortedEditions = _sortedEditions.Where(edition => edition.Author.Name == authorName).ToList();
             }
-            editions = editions.Where(edition => edition.Price >= minPrice && edition.Price <= maxPrice).ToList();
-            editions = editions.Where(edition => edition.YearOfPublishing >= minYear && edition.YearOfPublishing <= maxYear).ToList();
+            _sortedEditions = _sortedEditions.Where(edition => edition.Price >= minPrice && edition.Price <= maxPrice).ToList();
+            _sortedEditions = _sortedEditions.Where(edition => edition.YearOfPublishing >= minYear && edition.YearOfPublishing <= maxYear).ToList();
             dataGridView1.Rows.Clear();
             switch (types.Count)
             {
@@ -322,10 +353,22 @@ namespace EditionCatalog.CMD
                     RemoveNotBaseColumns();
                     break;
             }
-            foreach (var edition in editions)
+            foreach (var edition in _sortedEditions)
             { 
                 dataGridView1.Rows.Add(edition.ToString().Split('\t'));
             }
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            if (_isApplied)
+            {
+                BookShelf.Clear();
+                BookShelf.AddRange(_sortedEditions.ToArray());
+                _sortedEditions = new List<Edition>();
+            }
+            _isApplied = false;
+
         }
         private void RemoveNotBaseColumns()
         {
@@ -333,10 +376,6 @@ namespace EditionCatalog.CMD
             {
                 dataGridView1.Columns.RemoveAt(dataGridView1.Columns.Count - 1);
             }
-        }
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
         private void buttonGraph_Click(object sender, EventArgs e)
         {
@@ -346,11 +385,20 @@ namespace EditionCatalog.CMD
                 return;
             }
             panelGraph.Visible = false;
-
         }
         private void buttonGraphEachAuthorBookCount_Click(object sender, EventArgs e)
         {
-            GraphForm graphForm = new GraphForm();
+            GraphForm graphForm = new GraphForm(Graph.BooksCountToAuthor);
+            graphForm.Show();
+        }
+
+        private void buttonDiscount_Click(object sender, EventArgs e)
+        {
+            DiscountForm discountForm = new DiscountForm();
+            discountForm.ShowDialog();
+            dataGridView1.Rows.Clear();
+            FillInDataGridView();
+            buttonDiscount.Visible = false;
         }
     }
 }

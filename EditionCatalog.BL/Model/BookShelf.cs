@@ -3,20 +3,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
-namespace EditionCatalog.BL.Controller
+namespace EditionCatalog.BL.Model 
 {
-    public class EditionController : IEnumerable
+    public class BookShelf : IEnumerable
     {
         private List<Edition> _editions;
         public int Count => _editions.Count;
         public double MaxPrice => _editions.Max(edition => edition.Price);
         public int MaxYear => _editions.Max(edition => edition.YearOfPublishing);
 
-        public EditionController()
+        public BookShelf()
         {
             _editions = new List<Edition>();
         }
@@ -42,6 +38,10 @@ namespace EditionCatalog.BL.Controller
                 number));
         }
 
+        public void AddRange(params Edition[] editions)
+        {
+            _editions.AddRange(editions);
+        }
         public void UpdateEdition(string[] editionData,int index)
         {
             _editions[index].Author.Name = editionData[0];
@@ -125,10 +125,29 @@ namespace EditionCatalog.BL.Controller
             set => _editions[index] = value;
         }
 
-    }
-    public enum EditionType
-    {
-        Magazine = 0,
-        Book = 1
+        public Dictionary<string, int> GroupBy()
+        {
+            Dictionary<string,int> authorAndHisBookCount = new Dictionary<string, int>();
+            var authors = new List<string>();
+            foreach (var t in _editions.Where(t => !authors.Contains(t.Author.Name)))
+            {
+                authors.Add(t.Author.Name);
+            } 
+            List<int> counts = authors.Select(t => _editions.Count(e => e.Author.Name == t)).ToList();
+            for (int i = 0; i < authors.Count; i++)
+            {
+                authorAndHisBookCount.Add(authors[i],counts[i]);
+            }
+            return authorAndHisBookCount;
+        }
+
+        public void MakeDiscount(int value)
+        {
+            if(value >=100 || value < 0)return;
+            foreach (var edition in _editions)
+            {
+                edition.Price = Math.Round(edition.Price*(100 - value)/100,2);
+            }
+        }
     }
 }

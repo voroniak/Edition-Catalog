@@ -1,22 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using EditionCatalog.BL.Model;
 namespace EditionCatalog.CMD
 {
     public partial class GraphForm : Form
     {
-        private Graph _graph;
+        private readonly Graph _graph;
         public GraphForm(Graph graph)
         {
             _graph = graph;
             InitializeComponent();
+            SelectType();
         }
 
         private void SelectType()
@@ -31,7 +25,11 @@ namespace EditionCatalog.CMD
 
         private void BuildBooksCountToAuthor()
         {
-          
+
+            foreach (var kv in MainForm.BookShelf.GroupBy())
+            {
+                chart1.Series[0].Points.AddXY(kv.Key, kv.Value);
+            }
         }
 
         private void chart1_Click(object sender, EventArgs e)
@@ -40,11 +38,4 @@ namespace EditionCatalog.CMD
         }
     }
 
-  public enum Graph
-  {
-        BooksCountToAuthor,
-        EditionsPrice,
-        BooksToMagazine,
-        YearOfPublishing
-  }
 }
